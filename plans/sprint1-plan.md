@@ -42,13 +42,13 @@ Yang: Developer
 
 ## Initial task assignments
 
-Danny: User story 1. Add ```home```, ```about```, ```event-list```, ```event-card```, ```event-detail``` components. Add ```search-list```, ```search-form```, ```search-page``` components. Add and configure router. Route ```''``` to ```HomeComponent```, ```search``` to ```SearchPageComponent```, ```event/:id``` to ```EventDetailComponent```. Route child path ```:id``` of parent path ```search``` to ```SearchListComponent```.
+Danny: User story 1. Add ```home```, ```about```, ```event-list```, ```event-card```, ```event-detail``` components. Add ```search-list```, ```search-form```, ```search-page``` components. Add and configure router. Route ```''``` to ```HomeComponent```, ```about``` to ```AboutComponent```, ```search``` to ```SearchPageComponent```, ```event/:id``` to ```EventDetailComponent```. Route child path ```:id``` of parent path ```search``` to ```SearchListComponent```.
 
 David: User story 1. Add ```artist-list```, ```artist-card```, ```artist-detail```, ```login``` components. Route ```artist/:id``` to ```ArtistDetailComponent```, ```login``` to ```LoginComponent```.
 
 Sota: User story 1. Add ```location-list```, ```location-card```, ```location-detail```, ```register``` components. Route ```location/:id``` to ```LocationDetail```, ```register``` to ```RegisterComponent```.
 
-Yang: User story 1. Add ```venue-list```, ```venue-card```, ```venue-detail```, ```user``` components. Route ```venue/:id``` to ```VenueDetail```, ```user``` to ```UserComponent```.
+Yang: User story 1. Add ```venue-list```, ```venue-card```, ```venue-detail```, ```user``` components. Route ```venue/:id``` to ```VenueDetail```, ```user/:id``` to ```UserComponent```.
 
 ## Initial burn up chart
 
@@ -58,4 +58,4 @@ Yang: User story 1. Add ```venue-list```, ```venue-card```, ```venue-detail```, 
 See the github [project](https://github.com/wemoon1/soundcamp/projects/1?) page.
 
 ## Scrum times
-Meet at the Sandwhich Spot every Monday 4pm.
+Meet at the Sandwich Spot every Monday 4pm.
