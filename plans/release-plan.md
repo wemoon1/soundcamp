@@ -1,16 +1,16 @@
 # Release Plan: Soundcamp
-### Team members:
+## Team members:
 Danny Moon, David McLellan, Sota Nakajima, Yang Wu
 
-### High level goals
-Be able to search for music events. View music event details. Be able to notify users of upcoming events. List previously attended music events. Register and share the list with other users.
+## High level goals
+Be able to search for music events. View music event details. Be able to notify users of upcoming events. Register for an account. List previously attended music events. Be able to share the list with other users. Search other registered users.
 
 ## Sprints
 
 ### Sprint 1
 As a user I want to...
-* (20 pts) Visit and navigate through the website so that I can understand the site structure
-* (9 pts) Have the website to be responsive so that I can view it properly on any device
+* (20 pts) Visit and navigate the website so that I can understand the site structure
+* (9 pts) Have the website to be responsive so that I can properly view it on any device
 
 As a developer I want to...
 * (21 pts) Learn and set up technologies our team picked so that I can start working on the website
