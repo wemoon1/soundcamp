@@ -1,1 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
+/* Override Bootstrap's .btn-primary color */
+.btn.btn-primary {
+  color: #fff;
+  background-color: #7E57C2;
+  border-color: #7E57C2;
+}
+  
+/* Mouse hover before button is "active" */
+.btn.btn-primary:hover,
+/* Mouse hover after button is "active" */
+.btn.btn-primary:focus:hover {
+  color: #fff;
+  background-color: #643da9;
+  border-color: #643da9;
+}
+  
+  /* After button is pressed */
+.btn.btn-primary:focus,
+.btn.btn-primary.focus {
+  box-shadow: none !important; /* Not recommended to use !important */
+  background-color: #7E57C2;
+  border-color: #7E57C2;
+  color: #fff;
+}
+
+/* Button is pressed or active */
+.btn.btn-primary:active,
+.btn.btn-primary.active,
+/* button hold but mouse not on button*/
+.btn.btn-primary:active:focus {
+  background-color: #5b379a;
+  border-color: #5b379a;
+  color: #fff;
+}
+
+
+/* Override Bootstrap's .btn-outline-primary color */
+.btn.btn-outline-primary,
+.btn.btn-outline-primary:focus,
+.btn.btn-outline-primary.focus {
+  box-shadow: none !important;
+  color: #7E57C2;
+  border-color: #7E57C2;
+}
+
+.btn.btn-outline-primary:active,
+.btn.btn-outline-primary:active:focus,
+.btn.btn-outline-primary.active,
+.btn.btn-outline-primary:hover {
+  color: #fff;
+  background-color: #7E57C2;
+  border-color: #7E57C2;
+
+}
