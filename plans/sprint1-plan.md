@@ -42,13 +42,30 @@ Yang: Developer
 
 ## Initial task assignments
 
-Danny: User story 1. Add ```home```, ```about```, ```event-list```, ```event-card```, ```event-detail``` components. Add ```search-list```, ```search-form```, ```search-page``` components. Add and configure router. Route ```''``` to ```HomeComponent```, ```about``` to ```AboutComponent```, ```search``` to ```SearchPageComponent```, ```event/:id``` to ```EventDetailComponent```. Route child path ```:id``` of parent path ```search``` to ```SearchListComponent```.
+### Danny:
 
-David: User story 1. Add ```artist-list```, ```artist-card```, ```artist-detail```, ```login``` components. Route ```artist/:id``` to ```ArtistDetailComponent```, ```login``` to ```LoginComponent```.
+**User story 1.** Add ```home```, ```about```, ```header```, ```event-list```, ```event-card```, ```event-detail```, ```search-list```, ```search-form```, ```search-page``` components. Add and configure router. Route ```''``` to ```HomeComponent```, ```about``` to ```AboutComponent```, ```search``` to ```SearchPageComponent```, ```event/:id``` to ```EventDetailComponent```. Route child path ```:id``` of parent path ```search``` to ```SearchListComponent```. Create a simple hyperlink in the component template that navigates to the following: ```home``` to ```about```, ```home``` to ```search-page```, ```event-card``` to ```event-detail```.
 
-Sota: User story 1. Add ```location-list```, ```location-card```, ```location-detail```, ```register``` components. Route ```location/:id``` to ```LocationDetail```, ```register``` to ```RegisterComponent```.
+**User story 2.** Create a responsive header for the website and add to the top of app view. Create a simple view for: ```event-card```, ```event-detail```, ```home```, ```about```, ```search-page```.
 
-Yang: User story 1. Add ```venue-list```, ```venue-card```, ```venue-detail```, ```user``` components. Route ```venue/:id``` to ```VenueDetail```, ```user/:id``` to ```UserComponent```.
+### David:
+
+**User story 1.** Add ```artist-list```, ```artist-card```, ```artist-detail```, ```login``` components. Route ```artist/:id``` to ```ArtistDetailComponent```, ```login``` to ```LoginComponent```. Create a simple hyperlink in the component template that navigates to the following: ```artist-card``` to ```artist-detail```.
+
+**User story 2.** Create a simple view for: ```artist-card```, ```artist-detail```, ```login```.
+
+### Sota:
+
+**User story 1.** Add ```location-list```, ```location-card```, ```location-detail```, ```register``` components. Route ```location/:id``` to ```LocationDetail```, ```register``` to ```RegisterComponent```. Create a simple hyperlink in the component template that navigates to the following: ```location-card``` to ```location-detail```.
+
+**User story 2.** Create a simple view for: ```location-card```, ```location-detail```, ```register```.
+
+### Yang:
+
+**User story 1.** Add ```venue-list```, ```venue-card```, ```venue-detail```, ```user``` components. Route ```venue/:id``` to ```VenueDetail```, ```user/:id``` to ```UserComponent```. Create a simple hyperlink in the component template that navigates to the following: ```venue-card``` to ```venue-detail```. 
+
+
+**User story 2.** Create a simple view for: ```venue-card```, ```venue-detail```, ```user```.
 
 ## Initial burn up chart
 
