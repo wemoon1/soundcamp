@@ -13,6 +13,7 @@ import { EventDetailComponent } from './event-detail/event-detail.component';
 import { SearchListComponent } from './search-list/search-list.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { SearchPageComponent } from './search-page/search-page.component';
+import { HeaderComponent } from './header/header.component';
 
 /* Routes (move to separate file?) */
 const routes: Routes = [
@@ -36,7 +37,8 @@ const routes: Routes = [
     EventDetailComponent,
     SearchListComponent,
     SearchFormComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
