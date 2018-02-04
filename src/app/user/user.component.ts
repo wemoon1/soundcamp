@@ -7,12 +7,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UserComponent implements OnInit {
 
+    constructor(private route: ActivatedRoute) { }
 
+    ngOnInit() {
 
-  constructor() { }
-
-  ngOnInit() {
+    
+    }
 
   }
-
-}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -7,13 +7,13 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./venue-detail.component.css']
 })
 export class VenueDetailComponent implements OnInit {
-
-
-
-
-  constructor() { }
-
+Child_id:any;
+    constructor(private route: ActivatedRoute) { }
   ngOnInit() {
+   this.Child_id = this.route.snapshot.params.id;
 
 }
+
+
+
 }

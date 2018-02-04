@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { HttpClient } from  '@angular/common/http';
+import {Observable} from "rxjs/Observable";
+import {Http,Response} from "@angular/http";
+import 'rxjs/add/operator/map';
+
+
 
 @Component({
   selector: 'app-venue-list',
@@ -7,9 +13,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VenueListComponent implements OnInit {
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit() {
+    ngOnInit() {
+
   }
-
-}
+  }
