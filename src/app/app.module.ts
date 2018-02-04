@@ -12,14 +12,14 @@ import { VenueListComponent } from './venue-list/venue-list.component';
 import { VenueCardComponent } from './venue-card/venue-card.component';
 import { VenueDetailComponent } from './venue-detail/venue-detail.component';
 import { UserComponent } from './user/user.component';
-import { UserIdComponent } from './user/user-id.component';
+import { UserProfileComponent } from './user/user-profile.component';
 /* Routes (move to separate file?) */
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'venue-list', component:  VenueListComponent  },
   { path: 'venue-detail/:id', component: VenueDetailComponent },
   { path: 'user', component: UserComponent },
-  { path: 'user/:id', component: UserIdComponent },
+  { path: 'user/:id', component: UserProfileComponent },
   { path: 'about', component: AboutComponent }
 ];
 
@@ -32,7 +32,7 @@ const routes: Routes = [
     VenueCardComponent,
     VenueDetailComponent,
     UserComponent,
-    UserIdComponent
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

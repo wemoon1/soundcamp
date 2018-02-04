@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-user',
-  templateUrl: './user-id.component.html',
+  templateUrl: './user-Profile.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserIdComponent implements OnInit {
+export class UserProfileComponent implements OnInit {
 
 
 id = '';

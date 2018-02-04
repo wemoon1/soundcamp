@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class VenueDetailComponent implements OnInit {
 Child_id:any;
+Child_description:any;
     constructor(private route: ActivatedRoute) { }
   ngOnInit() {
    this.Child_id = this.route.snapshot.params.id;

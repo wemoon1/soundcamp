@@ -16,7 +16,7 @@ export class VenueCardComponent implements OnInit {
   state:any;
   name:any;
   street:any;
-  description:any;
+   @Input() description:any;
   website:any;
   zip:any;
   phone:any;
