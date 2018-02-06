@@ -2,11 +2,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule } from  '@angular/common/http';
 
 /* Components */
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+
+import { VenueListComponent } from './venue-list/venue-list.component';
+import { VenueCardComponent } from './venue-card/venue-card.component';
+import { VenueDetailComponent } from './venue-detail/venue-detail.component';
+import { UserComponent } from './user/user.component';
+import { UserProfileComponent } from './user/user-profile.component';
 import { EventListComponent } from './event-list/event-list.component';
 import { EventCardComponent } from './event-card/event-card.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
@@ -25,6 +32,12 @@ const routes: Routes = [
     ]
   },
   { path: 'event/:id', component: EventDetailComponent },
+    { path: '', component: HomeComponent },
+  { path: 'venue-list', component:  VenueListComponent  },
+  { path: 'venue-detail/:id', component: VenueDetailComponent },
+  { path: 'user', component: UserComponent },
+  { path: 'user/:id', component: UserProfileComponent },
+  { path: 'about', component: AboutComponent }
 ];
 
 @NgModule({
@@ -32,6 +45,12 @@ const routes: Routes = [
     AppComponent,
     HomeComponent,
     AboutComponent,
+
+    VenueListComponent,
+    VenueCardComponent,
+    VenueDetailComponent,
+    UserComponent,
+    UserProfileComponent
     EventListComponent,
     EventCardComponent,
     EventDetailComponent,
@@ -39,9 +58,11 @@ const routes: Routes = [
     SearchFormComponent,
     SearchPageComponent,
     HeaderComponent
+
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(routes),
   ],
   providers: [],
