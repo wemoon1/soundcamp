@@ -2,12 +2,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HttpClientModule } from  '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 /* Components */
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { LoginComponent } from './login/login.component';
+import { ArtistCardComponent } from './artist-card/artist-card.component';
+import { ArtistListComponent } from './artist-list/artist-list.component';
+import { ArtistDetailComponent } from './artist-detail/artist-detail.component';
 import { VenueListComponent } from './venue-list/venue-list.component';
 import { VenueCardComponent } from './venue-card/venue-card.component';
 import { VenueDetailComponent } from './venue-detail/venue-detail.component';
@@ -27,13 +31,15 @@ import { LocationDetailComponent } from './location-detail/location-detail.compo
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'artist/:id', component: ArtistDetailComponent },
+  { path: 'login', component: LoginComponent }
   { path: 'search', component: SearchPageComponent,
     children: [
       { path: ':id', component: SearchListComponent }
     ]
   },
   { path: 'event/:id', component: EventDetailComponent },
-    { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'venue-list', component:  VenueListComponent  },
   { path: 'venue-detail/:id', component: VenueDetailComponent },
   { path: 'user', component: UserComponent },
@@ -48,6 +54,10 @@ const routes: Routes = [
     AppComponent,
     HomeComponent,
     AboutComponent,
+    LoginComponent,
+    ArtistCardComponent,
+    ArtistListComponent,
+    ArtistDetailComponent
     VenueListComponent,
     VenueCardComponent,
     VenueDetailComponent,

@@ -25,11 +25,12 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
+  
   it('should render links from template', async(() => {
     // todo: test other links when their routerlink is defined
     const links = fixture.debugElement.queryAll(By.css('a'));
     const link = links[0];
     expect(link.properties.href).toEqual('/about');
   }));
+
 });
