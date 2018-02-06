@@ -32,7 +32,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'artist/:id', component: ArtistDetailComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
   { path: 'search', component: SearchPageComponent,
     children: [
       { path: ':id', component: SearchListComponent }
@@ -57,7 +57,7 @@ const routes: Routes = [
     LoginComponent,
     ArtistCardComponent,
     ArtistListComponent,
-    ArtistDetailComponent
+    ArtistDetailComponent,
     VenueListComponent,
     VenueCardComponent,
     VenueDetailComponent,
