@@ -1,0 +1,7 @@
+.logo,
+.logo:active,
+.logo:focus,
+.logo:hover {
+    color: #7E57C2;
+    font-size: 2.5em;
+}
