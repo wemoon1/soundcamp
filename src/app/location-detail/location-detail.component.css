@@ -1,0 +1,12 @@
+body {
+  background: black;
+}
+
+.detail {
+  color: white;
+  padding: 10px;
+  height: auto;
+  margin-left: 10%;
+  margin-right: 10%;
+  position: relative;
+}
