@@ -8,7 +8,6 @@ import { HttpClientModule } from  '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-
 import { VenueListComponent } from './venue-list/venue-list.component';
 import { VenueCardComponent } from './venue-card/venue-card.component';
 import { VenueDetailComponent } from './venue-detail/venue-detail.component';
@@ -21,6 +20,8 @@ import { SearchListComponent } from './search-list/search-list.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { HeaderComponent } from './header/header.component';
+import { RegisterComponent } from './register/register.component';
+import { LocationDetailComponent } from './location-detail/location-detail.component';
 
 /* Routes (move to separate file?) */
 const routes: Routes = [
@@ -37,7 +38,9 @@ const routes: Routes = [
   { path: 'venue-detail/:id', component: VenueDetailComponent },
   { path: 'user', component: UserComponent },
   { path: 'user/:id', component: UserProfileComponent },
-  { path: 'about', component: AboutComponent }
+  { path: 'about', component: AboutComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'location/:id', component: LocationDetailComponent }
 ];
 
 @NgModule({
@@ -56,7 +59,9 @@ const routes: Routes = [
     SearchListComponent,
     SearchFormComponent,
     SearchPageComponent,
-    HeaderComponent
+    HeaderComponent,
+    LocationDetailComponent,
+    RegisterComponent
 
   ],
   imports: [
