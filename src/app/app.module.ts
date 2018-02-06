@@ -44,7 +44,6 @@ const routes: Routes = [
   { path: 'venue-detail/:id', component: VenueDetailComponent },
   { path: 'user', component: UserComponent },
   { path: 'user/:id', component: UserProfileComponent },
-  { path: 'about', component: AboutComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'location/:id', component: LocationDetailComponent }
 ];
