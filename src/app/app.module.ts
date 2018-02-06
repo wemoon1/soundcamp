@@ -45,12 +45,11 @@ const routes: Routes = [
     AppComponent,
     HomeComponent,
     AboutComponent,
-
     VenueListComponent,
     VenueCardComponent,
     VenueDetailComponent,
     UserComponent,
-    UserProfileComponent
+    UserProfileComponent,
     EventListComponent,
     EventCardComponent,
     EventDetailComponent,
