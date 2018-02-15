@@ -80,10 +80,11 @@ const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    ReactiveFormsModule,
+    ReactiveFormsModule
+  ],
+  providers: [
     SoundcampService
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
