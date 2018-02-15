@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 /* Components */
 import { AppComponent } from './app.component';
@@ -26,6 +27,9 @@ import { SearchPageComponent } from './search/search-page/search-page.component'
 import { HeaderComponent } from './header/header.component';
 import { RegisterComponent } from './register/register.component';
 import { LocationDetailComponent } from './location/location-detail/location-detail.component';
+
+/* Services */
+import { SoundcampService } from './services/soundcamp.service';
 
 /* Routes (move to separate file?) */
 const routes: Routes = [
@@ -76,6 +80,8 @@ const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
+    ReactiveFormsModule,
+    SoundcampService
   ],
   providers: [],
   bootstrap: [AppComponent]
