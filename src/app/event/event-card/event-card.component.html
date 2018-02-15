@@ -1,8 +1,8 @@
 <div class="border-purple my-2 text-white media">
   <img class="align-self-center mx-3 my-2 rounded-circle"src="https://via.placeholder.com/64x64">
   <div class="media-body align-self-center">
-    <div>Artist name</div>
-    <div>Vampire Weekend with Fan Death at O2 Academy Brixton (February 16, 2010)</div>
-    <a [routerLink]="['/event', 2]">route</a>
+    <a [routerLink]="['/event', id ]">
+      {{ eventName }}
+    </a>
   </div>
 </div>
