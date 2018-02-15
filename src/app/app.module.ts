@@ -30,6 +30,7 @@ import { LocationDetailComponent } from './location/location-detail/location-det
 
 /* Services */
 import { SoundcampService } from './services/soundcamp.service';
+import { DataService } from './services/data.service';
 
 /* Routes (move to separate file?) */
 const routes: Routes = [
@@ -83,6 +84,7 @@ const routes: Routes = [
     ReactiveFormsModule
   ],
   providers: [
+    DataService,
     SoundcampService
   ],
   bootstrap: [AppComponent]
