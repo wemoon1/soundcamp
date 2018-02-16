@@ -20,7 +20,7 @@ export class EventCardComponent implements OnInit {
   }
 
   selectEvent() {
-    this.data.setSelectedEvent(this.event);
+    this.data.setSingleEvent(this.event);
     this.router.navigate(['event', this.id]);
   }
 

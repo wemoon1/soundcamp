@@ -20,8 +20,8 @@ export class EventDetailComponent implements OnInit {
   }
 
   parseData() {
-    // todo: navigate back when this.data.getSelected() is empty
-    const event = this.data.getSelectedEvent();
+    // todo: navigate back when this.data.getSingleEvent() is empty
+    const event = this.data.getSingleEvent();
 
     this.performers = event.performance;
     this.startTime = event.start.datetime;
