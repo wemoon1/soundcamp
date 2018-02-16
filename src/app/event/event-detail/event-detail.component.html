@@ -1,16 +1,19 @@
 <div class="container">
-  <h1>Wild Flag</h1>
-  <div>Status: ...</div>
-  <time>Feburary 18, 2012</time>
+  <div>{{ startTime | date:'fullDate'}}</div>
+  <div>{{ startTime | date:'shortTime'}}</div>
   <div>
-    at: <strong>The Fillmore</strong>, San Francisco, CA, US
+    If festival show displayName
   </div>
   <div>
-    The lineup:
+    {{ venueName }}
+  </div>
+  <div> {{ venueLocation}}</div>
+  <div>
+    <h2>The lineup</h2>
     <ul>
-      <li>Artist 1</li>
-      <li>Artist 2</li>
-      <li>Artist 3</li>
+      <li *ngFor="let performer of performers">
+        {{ performer.displayName }}
+      </li>
     </ul>
   </div>
   <button class="btn btn-primary">I'm going!</button>
