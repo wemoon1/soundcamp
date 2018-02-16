@@ -1,8 +1,8 @@
 <div class="border-purple my-2 text-white media">
   <img class="align-self-center mx-3 my-2 rounded-circle"src="https://via.placeholder.com/64x64">
   <div class="media-body align-self-center">
-    <a [routerLink]="['/event', id ]">
+    <div (click)="selectEvent()">
       {{ eventName }}
-    </a>
+    </div>
   </div>
 </div>
