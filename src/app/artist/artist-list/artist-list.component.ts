@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-artist-list',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./artist-list.component.css']
 })
 export class ArtistListComponent implements OnInit {
+  @Input() searchQuery;
 
   constructor() { }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-location-list',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./location-list.component.css']
 })
 export class LocationListComponent implements OnInit {
+  @Input() searchQuery;
 
   constructor() { }
 

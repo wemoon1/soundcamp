@@ -12,7 +12,7 @@ import 'rxjs/add/operator/map';
   styleUrls: ['./venue-list.component.css']
 })
 export class VenueListComponent implements OnInit {
-
+  @Input() searchQuery;
     constructor() { }
 
     ngOnInit() {
