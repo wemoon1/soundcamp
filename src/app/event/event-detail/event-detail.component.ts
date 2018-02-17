@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../../services/data.service';
 
 @Component({
@@ -13,7 +12,7 @@ export class EventDetailComponent implements OnInit {
   private venueName;
   private venueLocation;
 
-  constructor(private route: ActivatedRoute, private data: DataService) { }
+  constructor(private data: DataService) { }
 
   ngOnInit() {
     this.parseData();
@@ -22,11 +21,12 @@ export class EventDetailComponent implements OnInit {
   parseData() {
     // todo: navigate back when this.data.getSingleEvent() is empty
     const event = this.data.getSingleEvent();
-
-    this.performers = event.performance;
-    this.startTime = event.start.datetime;
-    this.venueName = event.venue.displayName;
-    this.venueLocation = event.location.city;
+    if (event) {
+      this.performers = event.performance;
+      this.startTime = event.start.datetime;
+      this.venueName = event.venue.displayName;
+      this.venueLocation = event.location.city;
+    }
   }
 
 }
