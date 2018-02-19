@@ -10,14 +10,15 @@ export class DataService {
           { ... }
         ]}}
   */
-  singleEvent: any;
+  event: any;
 
   constructor() { }
 
-  setSingleEvent(response: any) {
-    this.singleEvent = response;
+  saveEvent(response: any) {
+    this.event = response;
   }
-  getSingleEvent(): any {
-    return this.singleEvent;
+
+  loadEvent(): any {
+    return this.event;
   }
 }
