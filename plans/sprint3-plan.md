@@ -31,10 +31,12 @@ Be able to register and log in to user account. Be able to search for music even
 
 **Tasks**
 1. Finish register and login views (3 hrs)
-2. Implement user registration and login functionality (5hrs)
+2. Implement user registration and login functionality (5 hrs)
+   1. Send a POST request with password and email (or username) as a body from AuthenticationService to heroku server
+   2. Implement Firebase authentication for user creation and login as shown [here](https://firebase.google.com/docs/auth/web/password-auth) in express app backend
 3. Connect to Firebase database to heroku (1 hr)
-4. Create a database for storing user information (1 hr)
-5. Create a database for storing a list of following artists (1 hr)
+4. Create a database for storing user information and a list of following artists (2 hrs)
+5. Set rules for database so only authorized accounts can read/write and only they can read/write their own list (1 hr)
 
 **Total estimated time for user story 2:** 11 hours
 
@@ -53,7 +55,7 @@ Yang: Developer, Scrum master
 ### Danny:
 **User story 1.** Complete ```artist-list```, ```artist-card```, and ```artist-details```.
 
-**User story 2.** Set up express app so that it connects to Firebase database. Set up database for storing the list of following artists and user accounts.
+**User story 2.** Set up express app so that it connects to Firebase database. Set up database for storing the list of following artists and user accounts. Set rules for the database.
 
 ### David:
 
