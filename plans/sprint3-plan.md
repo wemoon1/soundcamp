@@ -36,7 +36,7 @@ Be able to register and log in to user account. Be able to search for music even
 4. Create a database for storing user information (1 hr)
 5. Create a database for storing a list of following artists (1 hr)
 
-**Total estimated time for user story 1:** 11 hours
+**Total estimated time for user story 2:** 11 hours
 
 ## Team roles
 
@@ -51,26 +51,21 @@ Yang: Developer, Scrum master
 ## Initial task assignments
 
 ### Danny:
+**User story 1.** Complete ```artist-list```, ```artist-card```, and ```artist-details```.
 
-**User story 2.** Complete ```register``` and ```login``` component. Set up express app so that it connects to Firebase database. Implement registration and login functionality.
+**User story 2.** Set up express app so that it connects to Firebase database. Set up database for storing the list of following artists and user accounts.
 
 ### David:
 
 **User story 1.** Complete ```venue-list```, ```venue-card```, and ```venue-details```.
 
-**User story 2.** 
-
 ### Sota:
 
-**User story 1.** Complete ```artist-list```, ```artist-card```, and ```artist-details```.
-
-**User story 2.** 
+**User story 2.** Complete ```register``` and ```login``` component. Implement registration and login functionality.
 
 ### Yang:
 
 **User story 1.** Complete ```location-list```, ```location-card```, and ```location-details```.
-
-**User story 2.** 
 
 ## Initial burn up chart
 
