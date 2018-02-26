@@ -1,3 +1,14 @@
 <p>
   location-list works!
 </p>
+<h4>{{searchQuery}}</h4>
+ <div *ngIf="searchRes">
+    <div *ngFor="let res of searchRes">
+      <div class= "row"> <div class="col-md-12">
+        <div class= "searh-res well">
+          <h4>{{res}}</h4>
+        </div>
+      </div>
+     </div>
+    </div>
+  </div>

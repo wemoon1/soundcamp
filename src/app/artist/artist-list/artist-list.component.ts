@@ -1,11 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
-
+import { SoundcampService } from '../../services/soundcamp.service';
 @Component({
   selector: 'app-artist-list',
   templateUrl: './artist-list.component.html',
-  styleUrls: ['./artist-list.component.css']
+  styleUrls: ['./artist-list.component.css'],
+  providers: [SoundcampService]
 })
 export class ArtistListComponent implements OnInit {
+
   // todo:
   // 1) import Soundcamp service and inject it
   // 2) call getArtists() from SoundcampService and pass the argument searchQuery into the function and subscribe to it
@@ -14,9 +16,10 @@ export class ArtistListComponent implements OnInit {
 
   @Input() searchQuery;
 
-  constructor() { }
+  constructor(private service: SoundcampService) { }
 
   ngOnInit() {
+
   }
 
 }

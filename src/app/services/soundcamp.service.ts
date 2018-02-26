@@ -42,4 +42,19 @@ export class SoundcampService {
 
     return this.http.get(requestUrl);
   }
+
+  getLocation(query: string, pageNumber: number): Observable<object> {
+    const resourceUrl = 'locations/search/' + query + '/' + pageNumber;
+    const requestUrl = this.urlBuilder(resourceUrl);
+
+    return this.http.get(requestUrl);
+  }
+
+
+
+
+
+
+
+
 }
