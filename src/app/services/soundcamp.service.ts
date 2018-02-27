@@ -42,4 +42,18 @@ export class SoundcampService {
 
     return this.http.get(requestUrl);
   }
+
+  getArtists(query: string, pageNumber: number): Observable<object> {
+    const resourceUrl = 'artists/search/' + query + '/' + pageNumber;
+    const requestUrl = this.urlBuilder(resourceUrl);
+
+    return this.http.get(requestUrl);
+  }
+
+  getArtistEvents(artistId: string, pageNumber: number): Observable<object> {
+    const resourceUrl = 'artists/' + artistId + '/events/' + pageNumber;
+    const requestUrl = this.urlBuilder(resourceUrl);
+
+    return this.http.get(requestUrl);
+  }
 }
