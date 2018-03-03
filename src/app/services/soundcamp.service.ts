@@ -50,7 +50,12 @@ export class SoundcampService {
     return this.http.get(requestUrl);
   }
 
+ getEvent(metroAreaId: number, pageNumber: number): Observable<object> {
+   const resourceUrl = 'locations/'+ metroAreaId +'/events/' + pageNumber;
+   const requestUrl = this.urlBuilder(resourceUrl);
 
+   return this.http.get(requestUrl);
+ }
 
 
 

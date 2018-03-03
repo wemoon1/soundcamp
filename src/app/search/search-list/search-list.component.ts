@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SoundcampService } from '../../services/soundcamp.service';
-import {Venue} from '../../Venue';
+
 
 @Component({
   selector: 'app-search-list',
@@ -10,8 +10,8 @@ import {Venue} from '../../Venue';
   providers: [SoundcampService]
 })
 export class SearchListComponent implements OnInit {
-  private searchQuery: string;
-  private searchRes: Venue[];
+ searchQuery: string;
+  private searchRes: Location[];
   private list: any;
   events: any;
   constructor(private route: ActivatedRoute, private service: SoundcampService) { }

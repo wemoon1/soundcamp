@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {SoundcampService} from '../../services/soundcamp.service'
-import {Venue} from '../../Venue'
+
 
 @Component({
   selector: 'app-search-form',
@@ -12,7 +12,7 @@ import {Venue} from '../../Venue'
 })
 export class SearchFormComponent implements OnInit {
   searchForm: FormGroup;
-  searchRes:  Venue[];
+
 
 
   constructor(

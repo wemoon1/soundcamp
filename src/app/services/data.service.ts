@@ -11,8 +11,16 @@ export class DataService {
         ]}}
   */
   event: any;
+  location: any;
 
   constructor() { }
+  saveLocation(response: any) {
+    this.location = response;
+  }
+  loadLocation(response: any) {
+    return this.location;
+  }
+
 
   saveEvent(response: any) {
     this.event = response;

@@ -27,6 +27,8 @@ import { SearchPageComponent } from './search/search-page/search-page.component'
 import { HeaderComponent } from './header/header.component';
 import { RegisterComponent } from './register/register.component';
 import { LocationDetailComponent } from './location/location-detail/location-detail.component';
+import { LocationListComponent } from './location/location-list/location-list.component';
+import { LocationCardComponent } from './location/location-card/location-card.component';
 
 /* Services */
 import { SoundcampService } from './services/soundcamp.service';
@@ -74,6 +76,8 @@ const routes: Routes = [
     SearchPageComponent,
     HeaderComponent,
     LocationDetailComponent,
+    LocationListComponent,
+    LocationCardComponent,
     RegisterComponent
 
   ],
