@@ -11,6 +11,7 @@ export class DataService {
         ]}}
   */
   event: any;
+  venue: any;
 
   constructor() { }
 
@@ -20,5 +21,13 @@ export class DataService {
 
   loadEvent(): any {
     return this.event;
+  }
+  
+  saveVenue(response:any) {
+    this.venue = response;
+  }
+  
+  loadVenue(): any {
+    return this.venue;
   }
 }
