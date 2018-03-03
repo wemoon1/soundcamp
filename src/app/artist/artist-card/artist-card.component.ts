@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-
+import { DataService } from '../../services/data.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-artist-card',
   templateUrl: './artist-card.component.html',
@@ -15,10 +16,26 @@ export class ArtistCardComponent implements OnInit {
   // 5) when the artist is clicked by user, call onSelected()
   // see event-card.component.ts for help
   @Input() artist;
+  artistId;
+  artistName;
 
-  constructor() { }
+  constructor(private data: DataService, private router: Router) { }
 
   ngOnInit() {
+    this.parseArtist();
   }
 
+  parseArtist() {
+    if (this.artist) {
+      this.artistId = this.artist.id;
+      this.artistName = this.artist.displayName;
+    } else {
+      console.log('empty artist!');
+    }
+  }
+
+  onSelected() {
+    this.data.saveArtist(this.artist);
+    this.router.navigate(['artist', this.artistId]);
+  }
 }

@@ -1,3 +1,5 @@
-<p>
-  artist-list works!
-</p>
+<ng-container *ngIf="artistResults">
+  <div *ngFor="let artist of artistResults">
+    <app-artist-card [artist]="artist"></app-artist-card>
+  </div>
+</ng-container>
