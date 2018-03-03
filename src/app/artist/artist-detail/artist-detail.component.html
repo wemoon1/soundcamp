@@ -4,6 +4,9 @@
   <ng-container *ngIf="upcomingEvents">
     <app-event-list [events]="upcomingEvents"></app-event-list>
   </ng-container>
+  <div *ngIf="totalUpcomingEvents > upcomingEventsShown">
+    <button class="btn btn-primary" (click)="showMoreUpcoming()" type="submit">show more</button>
+  </div>
 </ng-container>
 
 <ng-container *ngIf="!onTour">
