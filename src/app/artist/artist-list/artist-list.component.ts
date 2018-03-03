@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { SoundcampService } from '../../services/soundcamp.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { SoundcampService } from '../../services/soundcamp.service';
   templateUrl: './artist-list.component.html',
   styleUrls: ['./artist-list.component.css']
 })
-export class ArtistListComponent implements OnInit {
+export class ArtistListComponent implements OnInit, OnChanges {
   // todo:
   // 1) import Soundcamp service and inject it
   // 2) call getArtists() from SoundcampService and pass the argument searchQuery into the function and subscribe to it
@@ -14,15 +14,21 @@ export class ArtistListComponent implements OnInit {
   // 3) in the template, loop through artistResult and pass each element to child component artist-card
 
   @Input() searchQuery;
-  artistResults: any;
-  perPage: number;
-  totalResults: number;
-  currentPage = 1;
-  resultsShown: number;
+  artistResults = []; // self explanatory, a list of artists
+  perPage: number; // how many results per page, usually 5
+  totalResults: number; // total number of results
+  currentPage = 1; // the current page of results
+  resultsShown: number; // how many results that's shown in the template
 
   constructor(private service: SoundcampService) { }
 
   ngOnInit() {
+  }
+
+  // called when searchQuery changes
+  // clear the results and search artist(s)
+  ngOnChanges() {
+    this.clearResults();
     this.searchArtists();
   }
 
@@ -40,13 +46,25 @@ export class ArtistListComponent implements OnInit {
     // how many artists we have shown so far
     this.resultsShown = this.perPage * this.currentPage;
     if (this.totalResults) {
-      // for (const artist of data.resultsPage.results.artist) {
-      //   this.artistResults.push(artist);
-      // }
-      this.artistResults = data.resultsPage.results.artist;
+      for (const artist of data.resultsPage.results.artist) {
+        this.artistResults.push(artist);
+      }
     } else {
       console.log('found no results for artst!');
     }
   }
 
+  showMore() {
+    this.currentPage += 1;
+    this.resultsShown = this.currentPage * this.perPage;
+    this.searchArtists();
+  }
+
+  clearResults() {
+    this.artistResults = [];
+    this.currentPage = 1;
+    this.perPage = 0;
+    this.totalResults = 0;
+    this.resultsShown = 0;
+  }
 }
