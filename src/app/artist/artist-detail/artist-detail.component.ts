@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { SoundcampService } from '../../services/soundcamp.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-artist-detail',
@@ -8,22 +9,21 @@ import { SoundcampService } from '../../services/soundcamp.service';
   styleUrls: ['./artist-detail.component.css']
 })
 export class ArtistDetailComponent implements OnInit {
-  // todo:
-  // 1) import DataService
-  // 2) on component load, call loadArtist() from DataService
-  // 3) get the array object "event" by calling getArtistEvents() from SoundcampService
-  // 4) in the template, call *ngFor on 'event' and pass each element to event-list component
-  // see event-card.component.ts for help
   artist: any;
   upcomingEvents = [];
   totalUpcomingEvents = 0;
   currentPageUpcoming = 1;
-  upcomingEventsShown;
+  upcomingEventsShown = 0;
+
   perPage = 5;
 
   onTour = false;
-
-  constructor(private data: DataService, private service: SoundcampService) { }
+  constructor(
+    private data: DataService,
+    private soundcamp: SoundcampService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
     this.artist = this.data.loadArtist();
@@ -32,13 +32,14 @@ export class ArtistDetailComponent implements OnInit {
         this.onTour = true;
         this.getUpcomingEvents();
       }
+    } else {
+      this.router.navigate(['']);
     }
   }
 
   getUpcomingEvents() {
-    this.service.getArtistEvents(this.artist.id, this.currentPageUpcoming).subscribe(data => {
+    this.soundcamp.getArtistEvents(this.artist.id, this.currentPageUpcoming).subscribe(data => {
       this.parseUpcomingEvents(data);
-      // this.upcomingEvents = this.upcomingEvents.resultsPage.results.event;
     });
   }
 
