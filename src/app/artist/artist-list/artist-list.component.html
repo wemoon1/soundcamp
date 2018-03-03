@@ -2,4 +2,10 @@
   <div *ngFor="let artist of artistResults">
     <app-artist-card [artist]="artist"></app-artist-card>
   </div>
+  <div *ngIf="totalResults > resultsShown">
+    <button class="btn btn-primary"(click)="showMore()">
+      show next {{ totalResults - resultsShown > perPage? perPage : totalResults - resultsShown}} ({{ totalResults - resultsShown}} left)
+    </button>
+    <hr>
+  </div>
 </ng-container>
