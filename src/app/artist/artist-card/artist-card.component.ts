@@ -14,10 +14,10 @@ export class ArtistCardComponent implements OnInit {
   constructor(private data: DataService, private router: Router) { }
 
   ngOnInit() {
-    this.parseArtist();
+    this.parseArtistData();
   }
 
-  parseArtist() {
+  parseArtistData() {
     if (this.artist) {
       this.artistId = this.artist.id;
       this.artistName = this.artist.displayName;

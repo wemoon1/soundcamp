@@ -39,11 +39,11 @@ export class ArtistDetailComponent implements OnInit {
 
   getUpcomingEvents() {
     this.soundcamp.getArtistEvents(this.artist.id, this.currentPageUpcoming).subscribe(data => {
-      this.parseUpcomingEvents(data);
+      this.updateUpcomingEvents(data);
     });
   }
 
-  parseUpcomingEvents(events: any) {
+  updateUpcomingEvents(events: any) {
     if (this.currentPageUpcoming < 2) {
       this.totalUpcomingEvents = events.resultsPage.totalEntries;
     }
