@@ -56,4 +56,11 @@ export class SoundcampService {
 
     return this.http.get(requestUrl);
   }
+
+  getNearestEvents(position: Position, pageNumber: number): Observable<object> {
+    const resourceUrl = 'locations/' + position.coords.latitude + '/' + position.coords.longitude + '/events/' + pageNumber;
+    const requestUrl = this.urlBuilder(resourceUrl);
+
+    return this.http.get(requestUrl);
+  }
 }
