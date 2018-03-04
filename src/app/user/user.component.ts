@@ -1,17 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component } from '@angular/core';
+import { AuthService } from '../core/auth.service';
+
 @Component({
-  selector: 'app-user',
+  selector: 'user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent implements OnInit {
+export class UserComponent {
 
-    constructor(private route: ActivatedRoute) { }
 
-    ngOnInit() {
+  constructor(public auth: AuthService) { }
 
-    
-    }
-
-  }
+}
