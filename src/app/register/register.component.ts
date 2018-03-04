@@ -3,6 +3,7 @@ import { AuthService } from '../core/auth.service';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { FormGroup, FormBuilder, Validators, AbstractControl} from '@angular/forms';
 import { map, take, debounceTime } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +14,10 @@ export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
 
-  constructor(private afs: AngularFirestore, private fb: FormBuilder, public auth: AuthService) { }
+  constructor(private afs: AngularFirestore,
+              private fb: FormBuilder,
+              public auth: AuthService,
+              private router: Router) { }
 
   ngOnInit() {
     this.registerForm = this.fb.group({
@@ -43,8 +47,11 @@ export class RegisterComponent implements OnInit {
 
   get username() { return this.registerForm.get('username') }
 
-  register() {
-    return this.auth.emailSignUp(this.email.value, this.password.value)
+  register(user) {
+    return this.auth.emailSignUp(this.email.value, this.password.value).then(() =>
+    {this.auth.updateUser(user,{username: this.username.value})}).then(() => {
+        this.router.navigate(['/'])
+    });
   }
 }
 
@@ -59,7 +66,7 @@ export class CustomValidator {
 
       const username = control.value.toLowerCase();
       console.log("test if customs")
-      return afs.collection('users', ref => ref.where('uid', '==', username) )
+      return afs.collection('users', ref => ref.where('username', '==', username) )
 
         .valueChanges().pipe(
           debounceTime(500),

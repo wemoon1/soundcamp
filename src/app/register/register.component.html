@@ -1,41 +1,43 @@
-<form [formGroup]="registerForm" (ngSubmit)="register()">
+<ng-container *ngIf="(auth.user | async) || {} as user">
+  <form [formGroup]="registerForm" (ngSubmit)="register(user)">
 
 
-	<label for="username" >Name</label>
-	<input type="text" formControlName="username" class="form-control" name="username" id="username"  placeholder="Enter your Username" required/>
+  	<label for="username" >Name</label>
+  	<input type="text" formControlName="username" class="form-control" name="username" id="username"  placeholder="Enter your Username" required/>
 
-  <div *ngIf="username.invalid && username.dirty" class="notification is-danger">
-    {{ username.value }} is already taken
-  </div>
+    <div *ngIf="username.invalid && username.dirty" class="notification is-danger">
+      {{ username.value }} is already taken
+    </div>
 
-  <div *ngIf="username.valid" class="notification is-success">
-    {{ username.value }} is available
-  </div>
+    <div *ngIf="username.valid" class="notification is-success">
+      {{ username.value }} is available
+    </div>
 
-  <div *ngIf="username.pending" class="notification is-info">
-    Checking availability of {{ username.value }}
-  </div><br><br>
-
-
-  <label for="email" >Email</label>
-	<input type="text" formControlName="email" class="form-control" name="email" id="email"  placeholder="Enter your Email" required/>
-
-  <div *ngIf="email.invalid && email.dirty">
-      Email must be in x@y format
-  </div><br><br>
+    <div *ngIf="username.pending" class="notification is-info">
+      Checking availability of {{ username.value }}
+    </div><br><br>
 
 
-  <label for="password" >Password</label>
-	<input type="password" formControlName="password" class="form-control" name="password" id="password"  placeholder="Enter your Password" required/>
+    <label for="email" >Email</label>
+  	<input type="text" formControlName="email" class="form-control" name="email" id="email"  placeholder="Enter your Email" required/>
 
-  <div *ngIf="password.invalid && password.touched" >
-    Password must be between 6 and 24 chars and have at least one number
-  </div>
+    <div *ngIf="email.invalid || email.dirty">
+        Email must be in x@y.z format
+    </div><br><br>
 
-  <div *ngIf="registerForm.valid" >Form looks good! Let's do this.</div>
-  <br><br>
-	<div class="form-group ">
-		<button type="submit" class="submitbtn" [disabled]="!registerForm.valid">Register</button>
-	</div>
-				<!-- </form> -->
-</form>
+
+    <label for="password" >Password</label>
+  	<input type="password" formControlName="password" class="form-control" name="password" id="password"  placeholder="Enter your Password" required/>
+
+    <div *ngIf="password.invalid && password.touched" >
+      Password must be between 6 and 24 chars and have at least one number
+    </div>
+
+    <div *ngIf="registerForm.valid" >Form looks good! Let's do this.</div>
+    <br><br>
+  	<div class="form-group ">
+  		<button type="submit" class="submitbtn" [disabled]="!registerForm.valid">Register</button>
+  	</div>
+  				<!-- </form> -->
+  </form>
+</ng-container>
