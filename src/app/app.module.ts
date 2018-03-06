@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { CoreModule } from './core/core.module';
 
 /* Components */
 import { AppComponent } from './app.component';
@@ -33,6 +35,10 @@ import { LocationCardComponent } from './location/location-card/location-card.co
 /* Services */
 import { SoundcampService } from './services/soundcamp.service';
 import { DataService } from './services/data.service';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 /* Routes (move to separate file?) */
 const routes: Routes = [
@@ -85,7 +91,13 @@ const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    CoreModule,
+    AngularFireAuthModule,
+    AngularFirestoreModule,
   ],
   providers: [
     DataService,
