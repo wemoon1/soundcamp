@@ -1,5 +1,9 @@
-<p>
-  artist-card works!
-</p>
-
-<a routerLink="artist/2">Click Here</a>
+<div class="border-purple my-2 text-white media">
+  <img class="align-self-center mx-3 my-2 rounded-circle"src="https://via.placeholder.com/64x64">
+  <div class="media-body align-self-center">
+    <div (click)="onSelected()">
+      {{ artistName }}
+    </div>
+  </div>
+  <button class="btn btn-primary" (click)="onFollow()">Follow</button>
+</div>
