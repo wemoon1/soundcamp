@@ -1,87 +1,32 @@
 
-body, html{
-     height: 100%;
- 	background-repeat: no-repeat;
- 	font-family: 'Oxygen', sans-serif;
+#username,#email,#password{
+    size: 20px;
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+label,div {
   color: white;
 }
 
-.main{
-}
-
-h1.title {
-	font-size: 50px;
-	font-family: 'Passion One', cursive;
-	font-weight: 400;
-}
-
-hr{
-	width: 10%;
-	color: #fff;
-}
-
-.form-group{
-	margin-bottom: 15px;
-}
-
-label{
-	margin-bottom: 15px;
-}
-
-input,
-input::-webkit-input-placeholder {
-    font-size: 11px;
-    margin-left: 10px;
-}
-
-.main-login{
- 	background-color: #000;
-    /* shadows and rounded borders */
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    border-radius: 10px;
-    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-
-}
-
-.main-center{
- 	margin-top: 30px;
- 	margin: 0 auto;
- 	max-width: 500px;
-    padding: 40px 40px;
-
-}
-
-.login-button{
-	margin-top: 5px;
-  background-color: #FF1493;
-  border-color: #FF1493;
-}
-
-.login-register{
-  color: #FF1493;
-	font-size: 15px;
-	text-align: center;
-}
-
-/* unvisited link */
-a:link {
+.submitbtn {
+    height:50px;
+    width: 40%;
+    text-align: center;
+    background-color: #4CAF50;
     color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-/* visited link */
-a:visited {
-    color: #FF55A3;
-}
-
-/* mouse over link */
-a:hover {
-    color: white;
-}
-
-/* selected link */
-a:active {
-    color: #FF55A3;
+.submitbtn:hover {
+    background-color: #45a049;
 }

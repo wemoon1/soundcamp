@@ -12,8 +12,16 @@ export class DataService {
   */
   event: any;
   venue: any;
+  artist: any;
 
   constructor() { }
+  saveArtist(artist: any) {
+    this.artist = artist;
+  }
+
+  loadArtist(): any {
+    return this.artist;
+  }
 
   saveEvent(response: any) {
     this.event = response;

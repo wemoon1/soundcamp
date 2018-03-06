@@ -8,7 +8,12 @@
     <section class="detail">
       <p><strong style="font-size:50px;"> LOCATION {{location}} </strong></p>
       <p><strong style="font-size:30px;">List of upcoming</strong></p>
+      <div *ngIf="searchEvent">
+        <app-event-list [events]="searchEvent">
+        </app-event-list>
+     </div>
       <p><strong style="font-size:30px;">List of previous</strong></p>
     </section>
+
   </body>
 </html>

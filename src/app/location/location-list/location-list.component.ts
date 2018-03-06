@@ -1,21 +1,28 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
+import { SoundcampService } from '../../services/soundcamp.service';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-location-list',
   templateUrl: './location-list.component.html',
-  styleUrls: ['./location-list.component.css']
-})
-export class LocationListComponent implements OnInit {
-  // todo:
-  // 1) import Soundcamp service and inject it
-  // 2) call getLocations() and pass the argument searchQuery into the function and subscribe to it
-  // 2.5) inside .subscribe(), find and save the array object "location" to a variable e.g locationResult
-  // 3) in the template, loop through locationResult and pass each element to child component location-card
-  @Input() searchQuery;
+  styleUrls: ['./location-list.component.css'],
 
-  constructor() { }
+})
+export class LocationListComponent implements OnInit, OnChanges {
+  @Input() searchQuery;
+  locationResults;
+
+  constructor(private service: SoundcampService, private dataservice: DataService) { }
 
   ngOnInit() {
   }
 
+  ngOnChanges() {
+    this.searchLocation();
+  }
+
+  searchLocation() {
+    this.service.getLocation(this.searchQuery, 1).subscribe(
+      (data: any) => this.locationResults = data.resultsPage.results.location);
+  }
 }
