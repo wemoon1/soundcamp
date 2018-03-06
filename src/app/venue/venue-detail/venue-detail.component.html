@@ -1,1 +1,8 @@
-<h1>Venue ID {{Child_id}}</h1>
+<ng-container *ngIf="id">
+  <h1>{{id.displayName}}</h1>
+  <h3>address: {{id.street}}, {{id.city.displayName}}, {{id.city.state.displayName}}  {{id.zip}}</h3>
+  <h3>phone: {{id.phone}}</h3>
+  <h3>website: <a href={{id.website}}>{{id.website}}</a></h3>
+  <p>description: {{id.description}}</p>
+  <p>capacity: {{id.capacity}}</p>
+</ng-container>
