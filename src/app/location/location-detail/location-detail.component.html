@@ -8,27 +8,12 @@
     <section class="detail">
       <p><strong style="font-size:50px;"> LOCATION {{location}} </strong></p>
       <p><strong style="font-size:30px;">List of upcoming</strong></p>
-      <p><strong style="font-size:30px;">List of previous</strong></p>
-    </section>
-    <div *ngIf="searchEvent">
-      <div>
-
+      <div *ngIf="searchEvent">
         <app-event-list [events]="searchEvent">
         </app-event-list>
-      </div>
-    <!-->
-       <div *ngFor="let res of searchEvent">
-         <div class= "row"> <div class="col-md-12">
-           <div class= "searh-res well">
-
-             <h4>{{res.displayName}}</h4>
-             <h4>{{res.location.city}}</h4>
-           </div>
-         </div>
-        </div>
-       </div>
-       <--->
      </div>
+      <p><strong style="font-size:30px;">List of previous</strong></p>
+    </section>
 
   </body>
 </html>

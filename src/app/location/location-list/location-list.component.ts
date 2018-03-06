@@ -18,11 +18,11 @@ export class LocationListComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
-    this.searchArtists();
+    this.searchLocation();
   }
 
-  searchArtists() {
-    this.service.getArtists(this.searchQuery, 1).subscribe(
-      (data: any) => this.locationResults = data);
+  searchLocation() {
+    this.service.getLocation(this.searchQuery, 1).subscribe(
+      (data: any) => this.locationResults = data.resultsPage.results.location);
   }
 }

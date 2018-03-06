@@ -15,19 +15,5 @@ export class LocationCardComponent implements OnInit {
     private dataservice: DataService) { }
 
   ngOnInit() {
-
-// this.getData();
-
-
-
   }
-  // getData(){
-  //   this.service.getLocation(this.searchQuery, 1).subscribe((data:any) =>{
-  //     this.searchRes=data.resultsPage.results.location;
-  //     console.log(this.searchQuery);
-  //     console.log('this is data',this.searchRes);
-  //     })
-  //   }
-
-
 }
