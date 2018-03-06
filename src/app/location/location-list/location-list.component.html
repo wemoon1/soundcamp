@@ -1,1 +1,5 @@
-  <app-location-card [searchQuery]="searchQuery" ></app-location-card> 
+<ng-container *ngIf="locationResults">
+  <div *ngFor="let location of locationResults">
+    <app-location-card [location]="location"></app-location-card>
+  </div>
+</ng-container>
