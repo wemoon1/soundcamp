@@ -3,7 +3,7 @@
 ## Team members
 Danny Moon, David McLellan, Sota Nakajima, Yang Wu
 
-## Sprint completion date: Mar 3rd 2018
+## Sprint completion date: Mar 4th 2018
 
 ## High level goals
 Be able to register and log in to user account. Be able to search for music events by artists, venue, or location. Be able to view event information.
