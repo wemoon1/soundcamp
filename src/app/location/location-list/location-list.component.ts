@@ -1,11 +1,17 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SoundcampService } from '../../services/soundcamp.service';
+import { DataService } from '../../services/data.service';
+
+//import {Location} from '../../Location';
 
 @Component({
   selector: 'app-location-list',
   templateUrl: './location-list.component.html',
-  styleUrls: ['./location-list.component.css']
+  styleUrls: ['./location-list.component.css'],
+
 })
 export class LocationListComponent implements OnInit {
+
   // todo:
   // 1) import Soundcamp service and inject it
   // 2) call getLocations() and pass the argument searchQuery into the function and subscribe to it
@@ -13,9 +19,15 @@ export class LocationListComponent implements OnInit {
   // 3) in the template, loop through locationResult and pass each element to child component location-card
   @Input() searchQuery;
 
-  constructor() { }
+  constructor(private service: SoundcampService,private dataservice: DataService) { }
 
-  ngOnInit() {
+ngOnInit() {
+
+
   }
+
+
+
+
 
 }

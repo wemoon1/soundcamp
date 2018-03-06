@@ -43,12 +43,35 @@ export class SoundcampService {
     return this.http.get(requestUrl);
   }
 
-  getArtists(query: string, pageNumber: number): Observable<object> {
-    const resourceUrl = 'artists/search/' + query + '/' + pageNumber;
+
+  getLocation(query: string, pageNumber: number): Observable<object> {
+    const resourceUrl = 'locations/search/' + query + '/' + pageNumber;
     const requestUrl = this.urlBuilder(resourceUrl);
 
     return this.http.get(requestUrl);
   }
+
+  getArtists(query: string, pageNumber: number): Observable<object> {
+    const resourceUrl = 'artists/search/' + query + '/' + pageNumber;
+
+    const requestUrl = this.urlBuilder(resourceUrl);
+
+    return this.http.get(requestUrl);
+  }
+
+
+ getEvent(metroAreaId: number, pageNumber: number): Observable<object> {
+   const resourceUrl = 'locations/'+ metroAreaId +'/events/' + pageNumber;
+   const requestUrl = this.urlBuilder(resourceUrl);
+
+   return this.http.get(requestUrl);
+ }
+
+
+
+
+
+
 
   getArtistEvents(artistId: string, pageNumber: number): Observable<object> {
     const resourceUrl = 'artists/' + artistId + '/events/' + pageNumber;
@@ -63,4 +86,5 @@ export class SoundcampService {
 
     return this.http.get(requestUrl);
   }
+
 }
