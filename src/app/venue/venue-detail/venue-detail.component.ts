@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DataService } from '../../services/data.service';
+import { SoundcampService } from '../../services/soundcamp.service';
 
 @Component({
   selector: 'app-venue-detail',
@@ -8,19 +10,16 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class VenueDetailComponent implements OnInit {
   // todo:
-  // 1) import DataService
-  // 2) on component load, call loadVenue() from DataService
-  // 3) get the array object "event" by calling getVenueEvents() from SoundcampService
   // 4) in the template, call *ngFor on 'venue' and pass each element to event-list component
   // see event-card.component.ts for help
-Child_id:any;
-Child_description:any;
-    constructor(private route: ActivatedRoute) { }
+  Child_id:any;
+  Child_description:any;
+  venueEvent:any;
+  id:any;
+  constructor(private route: ActivatedRoute, private data: DataService, private service: SoundcampService) { }
   ngOnInit() {
-   this.Child_id = this.route.snapshot.params.id;
-
-}
-
-
-
+    this.Child_id = this.route.snapshot.params.id;
+	this.id = this.data.loadVenue();
+	this.venueEvent = this.service.getVenueEvents(this.id, 1);
+  }
 }

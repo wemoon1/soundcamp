@@ -1,15 +1,9 @@
-<div>
-  <ul>
-    <h1>
-      <a href="http://localhost:4200/venue-detail/{{id}}">{{name}}</a>
-    </h1>
-    <li>{{country}}</li>
-    <li>{{state}}</li>
-    <li>{{id}}</li>
-    <li>{{street}}</li>
-    <li>{{description}}</li>
-    <li>{{zip}}</li>
-    <li>{{website}}</li>
-    <li>{{phone}}</li>
-  </ul>
+<div class="border-purple my-2 text-white media">
+  <img class="align-self-center mx-3 my-2 rounded-circle"src="https://via.placeholder.com/64x64">
+  <div class="media-body align-self-center">
+    <div (click)="onSelected()">
+      {{ venueName }}
+    </div>
+  </div>
+  <button class="btn btn-primary" (click)="onFollow()">Follow</button>
 </div>
