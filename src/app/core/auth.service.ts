@@ -8,6 +8,7 @@ import 'rxjs/add/operator/switchMap'
 
 interface User {
   uid: string;
+  displayName: string;
   email: string;
   photoURL: string;
   // artistsTracked: string;  edit: array/list of strings.
@@ -36,10 +37,11 @@ export class AuthService {
         })
   }
 
-  emailSignUp(email: string, password: string) {
+  emailSignUp(email: string, username: string, password: string) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
-      .then(user => {
-        return this.updateUserData(user) // create initial user document
+      .then((user) => {
+        this.updateUserData(user)
+        this.updateUser(user,{displayName: username}) // create initial user document
       })
   }
 
@@ -88,6 +90,7 @@ export class AuthService {
 
     const data: User = {
       uid: user.uid,
+      displayName: user.displayName;
       email: user.email,
       photoURL: user.photoURL
     }

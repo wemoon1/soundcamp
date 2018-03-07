@@ -48,10 +48,9 @@ export class RegisterComponent implements OnInit {
   get username() { return this.registerForm.get('username') }
 
   register(user) {
-    return this.auth.emailSignUp(this.email.value, this.password.value).then(() =>
-    {this.auth.updateUser(user,{username: this.username.value})}).then(() => {
+    return this.auth.emailSignUp(this.email.value, this.username.value, this.password.value).then(() => {
         this.router.navigate(['/'])
-    });
+    })
   }
 }
 
@@ -65,8 +64,7 @@ export class CustomValidator {
     return (control: AbstractControl) => {
 
       const username = control.value.toLowerCase();
-      console.log("test if customs")
-      return afs.collection('users', ref => ref.where('username', '==', username) )
+      return afs.collection('users', ref => ref.where('displayName', '==', username) )
 
         .valueChanges().pipe(
           debounceTime(500),
