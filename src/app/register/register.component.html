@@ -2,7 +2,7 @@
   <form [formGroup]="registerForm" (ngSubmit)="register(user)">
 
 
-  	<label for="username" >Name</label>
+  	<label for="username" >Username</label>
   	<input type="text" formControlName="username" class="form-control" name="username" id="username"  placeholder="Enter your Username" required/>
 
     <div *ngIf="username.invalid && username.dirty" class="notification is-danger">

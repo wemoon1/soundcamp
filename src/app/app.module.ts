@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { CoreModule } from './core/core.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 /* Components */
 import { AppComponent } from './app.component';
@@ -98,6 +99,7 @@ const routes: Routes = [
     CoreModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
+    NgbModule.forRoot()
   ],
   providers: [
     DataService,

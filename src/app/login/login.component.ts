@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
 import { AuthService } from '../core/auth.service';
+import { AngularFirestore } from 'angularfire2/firestore';
+import { FormGroup, FormBuilder, Validators, AbstractControl} from '@angular/forms';
+import { map, take, debounceTime } from 'rxjs/operators';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -9,13 +13,36 @@ import { AuthService } from '../core/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private af: AngularFireAuth, public auth: AuthService) { }
 
-  ngOnInit() {
+    registerForm: FormGroup;
+
+    constructor(private afs: AngularFirestore,
+                private fb: FormBuilder,
+                public auth: AuthService,
+                private router: Router) { }
+
+    ngOnInit() {
+      this.registerForm = this.fb.group({
+        email:  ['', [
+          Validators.required,
+          Validators.email
+        ]],
+        password: ['', []
+        ],
+      });
+
+    }
+
+    // Use getters for cleaner HTML code
+    get email() { return this.registerForm.get('email') }
+
+    get password() { return this.registerForm.get('password') }
+
+    login(user) {
+      return this.auth.emailLogin(this.email.value, this.password.value).then((error) =>
+      {if (error)
+        this.router.navigate(['/'])
+      else
+        this.router.navigate(['/login'])})
+    }
   }
-
-  gLogin(){
-      this.auth.googleLogin();
-  }
-
-}

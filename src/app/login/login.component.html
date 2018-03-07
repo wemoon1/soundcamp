@@ -1,1 +1,12 @@
-<button class="nav-item nav-link btn btn-outline-primary mr-sm-3" (click)="gLogin()" type="submit">log in</button>
+<form [formGroup]="registerForm" (ngSubmit)="login(user)">
+
+  <label for="email" >Email</label>
+	<input type="text" formControlName="email" class="form-control" name="email" id="email"  placeholder="Enter your Email" required/>
+  <br>
+  <label for="password" >Password</label>
+	<input type="password" formControlName="password" class="form-control" name="password" id="password"  placeholder="Enter your Password" required/>
+
+	<div class="form-group ">
+		<button type="submit" class="submitbtn">Log in</button>
+	</div>
+</form>
