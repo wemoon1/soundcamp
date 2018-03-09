@@ -9,20 +9,20 @@
       <div style="font-size:30px; width:80%;"> Location name {{location.metroArea.displayName}} </div>
       <div class="track_button">Track location</div>
     </section>
+
     <div *ngIf="location">
-         <div class="card">
-         <div class= "row">
-          <div class="col-md-12">
-           <div class= "searh-res well">
+      <div class="border-purple my-2 text-white media">
+        <img class="align-self-center mx-3 my-2 rounded-circle"src="https://via.placeholder.com/64x64">
+        <div class="media-body align-self-center">
+
            <h4>  <a routerLink="/location/{{location.metroArea.id}}">{{location.city.country.displayName}}</a></h4>
-             <h4>{{location.city.displayName}}</h4>
-             <h4>{{location.metroArea.country.displayName}}</h4>
-             <h4>{{location.metroArea.displayName}}</h4>
+
            </div>
+             <button class="btn btn-primary" (click)="onFollow()">Follow</button>
          </div>
         </div>
-       </div>
-     </div>
+
+
 
   </body>
 </html>
