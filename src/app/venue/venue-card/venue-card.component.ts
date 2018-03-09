@@ -37,4 +37,8 @@ export class VenueCardComponent implements OnInit {
     this.data.saveVenue(this.venue);
     this.router.navigate(['venue', this.id]);
   }
+  
+  onFollow() {
+    console.log("followed " + this.venueName)
+  }
 }
