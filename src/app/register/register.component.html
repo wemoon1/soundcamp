@@ -2,7 +2,7 @@
   <form [formGroup]="registerForm" (ngSubmit)="register(user)">
 
 
-  	<label for="username" >Name</label>
+  	<label for="username" >Username</label>
   	<input type="text" formControlName="username" class="form-control" name="username" id="username"  placeholder="Enter your Username" required/>
 
     <div *ngIf="username.invalid && username.dirty" class="notification is-danger">
@@ -21,15 +21,15 @@
     <label for="email" >Email</label>
   	<input type="text" formControlName="email" class="form-control" name="email" id="email"  placeholder="Enter your Email" required/>
 
-    <div *ngIf="email.invalid || email.dirty">
-        Email must be in x@y.z format
+    <div *ngIf="email.invalid && email.dirty">
+        {{email.value}} not valid (already registed, poorly formatted,...?)
     </div><br><br>
 
 
     <label for="password" >Password</label>
   	<input type="password" formControlName="password" class="form-control" name="password" id="password"  placeholder="Enter your Password" required/>
 
-    <div *ngIf="password.invalid && password.touched" >
+    <div *ngIf="password.invalid" >
       Password must be between 6 and 24 chars and have at least one number
     </div>
 
