@@ -10,9 +10,16 @@
         <button class="btn btn-primary" (click)="showMoreUpcoming()" type="submit">show more</button>
       </div>
     </ng-container>
-    
     <ng-container *ngIf="!onTour">
       <h2>Artist is not on tour!</h2>
     </ng-container>
   </ng-container>
+
+  <h2>Past events</h2>
+  <ng-container *ngIf="pastEvents">
+    <app-event-list [events]="pastEvents"></app-event-list>
+  </ng-container>
+  <div *ngIf="totalPastEvents > pastEventsShown">
+    <button class="btn btn-primary" (click)="showMorePast()" type="submit">show more</button>
+  </div>
 </div>
