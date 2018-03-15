@@ -73,10 +73,6 @@ Yang: Developer
 
 **User story 2.** 
 
-## Initial burn up chart
-
-[Link to the burn up chart](https://docs.google.com/spreadsheets/d/1IbSDTOu34o_UgCqrPmez0c6Gvj0EuF7CuZbEkoHUcvQ/edit?usp=sharing)
-
 ## Initial scrum board
 See the github [project](https://github.com/wemoon1/soundcamp/projects/2?) page.
 

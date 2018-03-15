@@ -32,3 +32,7 @@ Keep using github projects as a scrum board since it's easier to have everything
 **User stories/day:** 1
 
 **Ideal work hours/day**: 2
+
+## Burn up chart
+
+[Link to the burn up chart](https://docs.google.com/spreadsheets/d/1IbSDTOu34o_UgCqrPmez0c6Gvj0EuF7CuZbEkoHUcvQ/edit?usp=sharing)
