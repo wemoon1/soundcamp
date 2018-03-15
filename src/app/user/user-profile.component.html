@@ -1,4 +1,4 @@
-<div *ngIf="auth.user | async; then authenticated else guest">
+<div *ngIf="Auth.user | async; then authenticated else guest">
         <!-- template will replace this div -->
 </div>
 
@@ -8,18 +8,23 @@
     <h3>Howdy, GUEST</h3>
     <p>Login to get started...</p>
 
-    <button (click)="auth.googleLogin()">
+    <button (click)="Auth.googleLogin()">
         <i class="fa fa-google"></i> Connect Google
     </button>
 
 </ng-template>
+  <div *ngIf="collections">
+    <div *ngFor="let event of collections">
 
-
+<p> Future-events: {{ event.name }}</p>
+    </div>
+  </div>
 <!-- User logged in -->
 <ng-template #authenticated>
-    <div *ngIf="auth.user | async as user">
+    <div *ngIf="Auth.user | async as user">
         <img  [src]="user.photoURL">
         <p>username: {{ user.uid }}</p>
+        <p>username: {{ user.displayName }}</p>
         <!-- <p>Artists Tracked: {{ user.artistsTracked }} </p> -->
         <button (click)="auth.signOut()">Logout</button>
     </div>

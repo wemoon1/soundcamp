@@ -1,6 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { Router } from '@angular/router';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
+import { Observable } from 'rxjs/Observable'
+
+import { AngularFireAuth } from 'angularfire2/auth';
 @Component({
   selector: 'app-artist-card',
   templateUrl: './artist-card.component.html',
@@ -11,7 +15,10 @@ export class ArtistCardComponent implements OnInit {
   artistId;
   artistName;
 
-  constructor(private data: DataService, private router: Router) { }
+  constructor(private data: DataService,
+              private router: Router,
+              private afsAuth: AngularFireAuth,
+              private afs:  AngularFirestore   ) { }
 
   ngOnInit() {
     this.parseArtistData();
@@ -32,6 +39,8 @@ export class ArtistCardComponent implements OnInit {
   }
 
   onFollow() {
-    console.log('following...');
+           console.log('following...');
+
+
   }
 }

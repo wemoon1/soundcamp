@@ -44,10 +44,10 @@ export class EventCardComponent implements OnInit {
   addtoFirestore(){
     this.user = this.afsAuth.auth.currentUser
      if (this.user) {
-      this.afs.collection("users").doc(this.user.uid).collection("attended-events")
-           .doc(String(this.eventName)).set({id: this.id},{merge: true})
+      this.afs.collection("users").doc(this.user.uid).collection("future-events")
+           .doc(String(this.id)).set({name: this.eventName},{merge: true})
            console.log('following...');
-           console.log(this.eventName);
+           console.log(this.user);
 
   }
 
