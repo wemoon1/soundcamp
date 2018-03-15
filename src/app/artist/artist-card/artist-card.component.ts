@@ -43,11 +43,9 @@ export class ArtistCardComponent implements OnInit {
     if (this.user) {
       console.log("currently signed in user:")
       console.log(this.user)
-      console.log(this.user.displayName)
-      console.log(this)
         if (this.artist) {
           this.afs.collection("users").doc(this.user.uid).collection("following-artists")
-          .doc(String(this.artistId)).set({name: this.artistName},{merge: true})
+          .doc(String(this.artistName)).set({id: this.artistId},{merge: true})
           console.log('following...');
           console.log(this.artistName);
         }
