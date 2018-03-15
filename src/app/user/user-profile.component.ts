@@ -5,6 +5,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable'
 import { DataService } from '../services/data.service';
+
 @Component({
   selector: 'app-user',
   templateUrl: './user-Profile.component.html',
