@@ -28,8 +28,7 @@ this.Auth.user.subscribe(data => this.getdata(data));
   }
 //this.user = this.afsauth.auth.currentUser
 getdata(data:any){
-const collection: AngularFirestoreCollection<any> = this.afs.collection('users').doc(data.uid).collection('future-events').valueChanges()
-collection.subscribe(data => this.collections=data) )
+const collection: AngularFirestoreCollection<any> = this.afs.collection('users').doc(data.uid).collection('future-events')
+collection.valueChanges().subscribe((data:any) => this.collections=data)
 }
-console.log(this.collections)
 }
