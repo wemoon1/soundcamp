@@ -40,6 +40,7 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { NotificationComponent } from './notification/notification.component';
 
 /* Routes (move to separate file?) */
 const routes: Routes = [
@@ -85,7 +86,8 @@ const routes: Routes = [
     LocationDetailComponent,
     LocationListComponent,
     LocationCardComponent,
-    RegisterComponent
+    RegisterComponent,
+    NotificationComponent
 
   ],
   imports: [
