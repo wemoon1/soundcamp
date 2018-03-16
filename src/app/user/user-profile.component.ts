@@ -16,6 +16,7 @@ export class UserProfileComponent implements OnInit {
 
 id = '';
 collections=[];
+artistsFollowing=[];
 auth;
   constructor(private route: ActivatedRoute,
               private afs: AngularFirestore,
@@ -24,13 +25,22 @@ auth;
                ) { }
 
   ngOnInit() {
-
-this.Auth.user.subscribe(data => this.getdata(data));
+     this.Auth.user.subscribe(data => this.getFutureEvents(data));
+     this.Auth.user.subscribe(data => this.getFollowingArtists(data));
+     // const artistsFollowing = this.getFollowingArtists(data);
   }
-//this.user = this.afsauth.auth.currentUser
-getdata(data:any){
-const collection: AngularFirestoreCollection<any> = this.afs.collection('users').doc(data.uid).collection('future-events').valueChanges()
-collection.subscribe(data => this.collections=data) )
-}
-console.log(this.collections)
+  //this.user = this.afsauth.auth.currentUser
+  getFutureEvents(data:any){
+    const collection: AngularFirestoreCollection<any> = this.afs.collection('users').doc(data.uid).collection('future-events').valueChanges();
+    collection.subscribe(data => this.collections=data) );
+  }
+  getFollowingArtists(data){
+    const artistsFollowing = [];
+    this.afs.collection('users').doc(data.uid).collection('following-artists').ref.get().then(function(querySnapshot) {
+      querySnapshot.forEach(function(doc) {
+        artistsFollowing.push(doc.id);
+      });
+    });
+    this.artistsFollowings = artistsFollowing;
+  }
 }

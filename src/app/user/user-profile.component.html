@@ -7,25 +7,28 @@
 <ng-template #guest>
     <h3>Howdy, GUEST</h3>
     <p>Login to get started...</p>
-
-    <button (click)="Auth.googleLogin()">
-        <i class="fa fa-google"></i> Connect Google
-    </button>
-
 </ng-template>
-  <div *ngIf="collections">
-    <div *ngFor="let event of collections">
 
-<p> Future-events: {{ event.name }}</p>
-    </div>
+<div *ngIf="collections">
+  <h1>Future Events</h1>
+  <div *ngFor="let event of collections">
+
+    <p> {{ event.name }}</p>
   </div>
+</div>
+
+<div *ngIf="artistsFollowings">
+  <h1>Artists Following</h1>
+  <div *ngFor="let artist of artistsFollowings">
+    <p> {{ artist }}</p>
+  </div>
+</div>
 <!-- User logged in -->
 <ng-template #authenticated>
     <div *ngIf="Auth.user | async as user">
-        <img  [src]="user.photoURL">
-        <p>username: {{ user.uid }}</p>
-        <p>username: {{ user.displayName }}</p>
-        <!-- <p>Artists Tracked: {{ user.artistsTracked }} </p> -->
-        <button (click)="auth.signOut()">Logout</button>
+        <div *ngIf="Auth.user.photoURL">
+          <img  [src]="user.photoURL">
+        </div>
+        <h1>{{ user.displayName }}</h1>
     </div>
 </ng-template>
