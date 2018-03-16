@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { Router } from '@angular/router';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @Component({
   selector: 'app-notification',
@@ -10,28 +12,51 @@ import { Router } from '@angular/router';
 export class NotificationComponent implements OnInit {
   notificationItems;
   displayName = [];
-  constructor(private data: DataService, private router: Router) { }
+  constructor(private data: DataService, private router: Router, private afAuth: AngularFireAuth,
+    private afs: AngularFirestore) { }
 
   ngOnInit() {
     this.data.currentMsg.subscribe(newMsg => {
-      this.displayName = [];
+      this.displayName = newMsg;
       this.notificationItems = newMsg;
-      for (const key in newMsg) {
-        if (newMsg.hasOwnProperty(key)) {
-          this.displayName.push(key);
-        }
-      }
+      // this.insertNames(newMsg);
     });
   }
 
+  insertNames(obj: any) {
+    for (const key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        this.displayName.push(key);
+      }
+    }
+  }
+
   onSelected(artistName) {
-    const artistId = this.notificationItems[artistName].id;
-    const artistPayload = {
-      'displayName' : artistName,
-      'id': artistId,
-      'onTourUntil': 'yyyy-mm-dd'
-    };
-    this.data.saveArtist(artistPayload);
-    this.router.navigate(['artist', artistId]);
+    let artistId;
+    let artistPayload;
+    this.afAuth.auth.onAuthStateChanged((user) => {
+      if (user) {
+        this.afs.collection('users')
+        .doc(user.uid)
+        .collection('following-artists').ref.get().then(function(querySnapshot) {
+          querySnapshot.forEach(function(doc) {
+            if (doc.id === artistName) {
+              artistId = doc.data().id;
+              return;
+            }
+          });
+          artistPayload = {
+            'displayName' : artistName,
+            'id': artistId,
+            'onTourUntil': 'yyyy-mm-dd'
+          };
+        }).then(() => {
+          this.data.saveArtist(artistPayload);
+          this.router.navigate(['artist', artistId]);
+        });
+      } else {
+        console.log('user not logged in');
+      }
+    });
   }
 }

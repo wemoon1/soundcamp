@@ -68,7 +68,7 @@ export class HomeComponent implements OnInit {
         });
       }
     }
-    this.data.changeMsg(artists);
+    this.data.changeMsg(artistsOnTour);
   }
 
 }
