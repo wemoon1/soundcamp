@@ -9,20 +9,9 @@
     <p>Login to get started...</p>
 </ng-template>
 
-<div *ngIf="collections">
-  <h1>Future Events</h1>
-  <div *ngFor="let event of collections">
 
-    <p> {{ event.name }}</p>
-  </div>
-</div>
 
-<div *ngIf="artistsFollowings">
-  <h1>Artists Following</h1>
-  <div *ngFor="let artist of artistsFollowings">
-    <a routerLink="/artist/{{artist[1]}}"><p> {{ artist[0] }}</p></a>
-  </div>
-</div>
+
 <!-- User logged in -->
 <div class="container">
       <div class="row">
@@ -44,17 +33,35 @@
     </div>
         <button  id="Logout" type="button" class="btn btn-danger" (click)="auth.signOut()">Logout</button>
 </div>
+
+  <div id="events" class="container">
+    <p id="title">Upcoming-events</p>
+    <div *ngIf="collections then events"> </div>
+  </div>
+
+    <div id="events" class="container">
+      <p id="title">Following Artists</p>
+    <div *ngIf="artistsFollowings then artists"> </div>
+  </div>
+
+
 </ng-template>
     </div>
     </div>
   </div>
-<div id="events" class="container">
-  <p id="title">Upcoming-events</p>
-  <div *ngIf="collections">
-      <div *ngFor="let event of collections">
-          <div class="col-xs-8">
-                  <p id="event"> {{ event.name }}</p>
-                      </div>
-                </div>
+<ng-template #events>
+        <div *ngFor="let event of collections">
+            <div class="col-xs-8">
+                    <p id="event"> {{ event.name }}</p>
+                        </div>
+                  </div>
+  
+
+</ng-template>
+<ng-template #artists>
+  <div class="artist">
+      <div *ngFor="let artist of artistsFollowings">
+        <a routerLink="/artist/{{artist[1]}}"><p> {{ artist[0] }}</p></a>
       </div>
-</div>
+  </div>
+</ng-template>
