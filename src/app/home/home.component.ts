@@ -61,12 +61,11 @@ export class HomeComponent implements OnInit {
     for (const key in artists) {
       if (artists.hasOwnProperty(key)) {
         const artistId = artists[key].id;
-        artistsOnTour.push(key)
-        // this.soundcamp.getArtistEvents(artistId, 1).subscribe((res: any) => {
-        //   if (res.resultsPage.totalEntries > 0) {
-        //     artistsOnTour.push(key);
-        //   }
-        // });
+        this.soundcamp.getArtistEvents(artistId, 1).subscribe((res: any) => {
+          if (res.resultsPage.totalEntries > 0) {
+            artistsOnTour.push(key);
+          }
+        });
       }
     }
     this.data.changeMsg(artists);
