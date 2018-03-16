@@ -1,4 +1,6 @@
-
+p {
+  color: white;
+}
 #username,#email,#password{
     size: 20px;
     width: 40%;
@@ -29,4 +31,22 @@ label,div {
 
 .submitbtn:hover {
     background-color: #45a049;
+}
+
+
+.pwdbtn {
+    height:50px;
+    width: 40%;
+    text-align: center;
+    background-color: #f00;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pwdbtn:hover {
+    background-color: #d00;
 }

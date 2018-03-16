@@ -79,9 +79,7 @@ export class AuthService {
 
   // Sends email allowing user to reset password
   resetPassword(email: string) {
-    const fbAuth = firebase.auth();
-
-    return fbAuth.sendPasswordResetEmail(email);
+    return this.afAuth.auth.sendPasswordResetEmail(email);
   }
 
   private updateUserData(user) {

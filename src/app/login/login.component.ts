@@ -45,4 +45,9 @@ export class LoginComponent implements OnInit {
       else
         this.router.navigate(['/login'])})
     }
+
+    resetPassword() {
+      alert("If your email is valid, a password reset form will be emailed!")
+      return this.auth.resetPassword(this.email.value);
+    }
   }
