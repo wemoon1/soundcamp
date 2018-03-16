@@ -17,16 +17,16 @@ Keep using github projects as a scrum board since it's easier to have everything
 ## Work completed/not completed:
 
 ### Completed
-- As a user, I want to search for music events by artist, venue, or location so that the web app is usable for me
+-  As a user, I want to add concerts I previously visited to my list so that I keep track and share the list with other users
 
 ### Not completed
-- As a user, I want to sign up and log in to my own profile so I can follow artists and be notified of their upcoming events
+-  As a user, I want to be notified of upcoming concerts for the artists I followed so that I know when the next event is coming up.
 
 ## Work completion rate
 
-**User stories completed:** 1
+**User stories completed:** 2
 
-**Estimated ideal work hours completed:** 12
+**Estimated ideal work hours completed:** 29
 
 **Number of days works done**: 14
 
