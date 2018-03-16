@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../core/auth.service';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -18,8 +17,7 @@ id = '';
 collections=[];
 artistsFollowings=[];
 auth;
-  constructor(private route: ActivatedRoute,
-              private afs: AngularFirestore,
+  constructor(private afs: AngularFirestore,
               private afsauth: AngularFireAuth,
               public Auth: AuthService,
               private data: DataService
