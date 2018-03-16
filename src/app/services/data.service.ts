@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class DataService {
@@ -13,6 +14,9 @@ export class DataService {
   event: any;
   venue: any;
   artist: any;
+
+  private msgSource = new Subject<any>();
+  currentMsg = this.msgSource.asObservable();
 
   constructor() { }
   saveArtist(artist: any) {
@@ -30,12 +34,16 @@ export class DataService {
   loadEvent(): any {
     return this.event;
   }
-  
+
   saveVenue(response:any) {
     this.venue = response;
   }
-  
+
   loadVenue(): any {
     return this.venue;
+  }
+
+  changeMsg(msg: any) {
+    this.msgSource.next(msg);
   }
 }
