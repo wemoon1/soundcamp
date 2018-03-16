@@ -5,5 +5,8 @@
       {{ artistName }}
     </div>
   </div>
-  <button class="btn btn-primary" (click)="onFollow()">Follow</button>
+  <div *ngIf="this.followingArtists[this.artistId] == this.artistName; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock><button class="btn btn-primary" (click)="unFollow()">Unfollow</button></ng-template>
+    <ng-template #elseBlock><button class="btn btn-primary" (click)="onFollow()">Follow</button></ng-template>
+  
 </div>
