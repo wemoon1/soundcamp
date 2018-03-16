@@ -14,9 +14,10 @@
 #userinfo{
 
   font-size: 20px;
-
+  margin-top: 10px;
   font-style: oblique;
   color:white;
+  text-align: justify;
 }
 #Logout{
   width: 100%;
