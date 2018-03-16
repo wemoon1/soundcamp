@@ -76,5 +76,9 @@ Yang: Developer
 ## Initial scrum board
 See the github [project](https://github.com/wemoon1/soundcamp/projects/2?) page.
 
+## Burn up chart
+
+[Link to the burn up chart](https://docs.google.com/spreadsheets/d/1IbSDTOu34o_UgCqrPmez0c6Gvj0EuF7CuZbEkoHUcvQ/edit?usp=sharing)
+
 ## Scrum times
 Meet at Sota's apartment every Monday 4pm.

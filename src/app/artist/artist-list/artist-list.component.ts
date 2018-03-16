@@ -1,7 +1,5 @@
-
 import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { SoundcampService } from '../../services/soundcamp.service';
-
 
 @Component({
   selector: 'app-artist-list',
@@ -28,7 +26,7 @@ export class ArtistListComponent implements OnInit, OnChanges {
   constructor(private service: SoundcampService) { }
 
   ngOnInit() {
-
+  
   }
 
   // called when searchQuery changes

@@ -59,7 +59,8 @@
 <ng-template #artists>
   <div class="artist">
       <div *ngFor="let artist of artistsFollowings">
-        <a routerLink="/artist/{{artist[1]}}"><p> {{ artist[0] }}</p></a>
+        <!-- <a routerLink="/artist/{{artist[1]}}"><p> {{ artist[0] }}</p></a> -->
+        <div (click)="onSelected(artist[1], artist[0])"><p> {{ artist[0] }}</p></div>
       </div>
   </div>
 </ng-template>

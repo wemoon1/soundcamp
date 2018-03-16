@@ -4,6 +4,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable'
 import { DataService } from '../services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -18,6 +19,7 @@ collections=[];
 artistsFollowings=[];
 auth;
   constructor(private afs: AngularFirestore,
+              private router: Router,
               private afsauth: AngularFireAuth,
               public Auth: AuthService,
               private data: DataService
@@ -37,9 +39,20 @@ auth;
     this.afs.collection('users').doc(data.uid).collection('following-artists').ref.get().then(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
         artistsFollowing.push([doc.id,doc.data().id]);
-        console.log(artistsFollowing)
+        // console.log(artistsFollowing)
       });
     });
     this.artistsFollowings = artistsFollowing;
+  }
+
+  onSelected(artistId, artistName) {
+    console.log(artistId, artistName);
+    const artistPayload = {
+      'displayName' : artistName,
+      'id': artistId,
+      'onTourUntil': 'yyyy-mm-dd'
+    };
+    this.data.saveArtist(artistPayload);
+    this.router.navigate(['artist', artistId]);
   }
 }
