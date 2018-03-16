@@ -3,8 +3,8 @@
     !
   </button>
   <div class="dropdown-menu">
-    <a class="dropdown-item" *ngFor="let item of notificationItems">
-      {{ item }}
-    </a>
+    <div *ngFor="let item of displayName">
+      <a class="dropdown-item" (click)="onSelected(item)">{{ item }}</a>
+    </div>
   </div>
 </div>
