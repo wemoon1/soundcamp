@@ -20,13 +20,13 @@
 
 <ng-template #authenticated>
   <div *ngIf="auth.user | async as user">
-    <app-notification></app-notification>
     <a routerLink="/profile">
       <button class="nav-item nav-link btn btn-outline-primary">
         {{user.displayName}} Profile
       </button>
     </a>
   </div>
+  <app-notification></app-notification>
   <button class="nav-item nav-link btn btn-outline-primary" (click)="signOut()">Sign out</button>
 </ng-template>
 
