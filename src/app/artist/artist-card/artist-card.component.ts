@@ -19,20 +19,28 @@ export class ArtistCardComponent implements OnInit {
   followingArtists: Object[];
 
   constructor(private data: DataService,
-			  private router: Router,
-			  private afAuth: AngularFireAuth,
+          private router: Router,
+          private afAuth: AngularFireAuth,
               private afs: AngularFirestore,
-			  public Auth: AuthService) { }
+          public Auth: AuthService) { }
 
   ngOnInit() {
     this.parseArtistData();
-	const artistsFollowing = [];
-	this.afs.collection('users').doc(this.afAuth.auth.currentUser.uid).collection('following-artists').ref.get().then(function(querySnapshot) {
-      querySnapshot.forEach(function(doc) {
-	    artistsFollowing[doc.data().id] = doc.id;
-      });
+    const artistsFollowing = [];
+    this.afAuth.auth.onAuthStateChanged((user) => {
+      if (user) {
+        this.afs.collection('users')
+        .doc(this.afAuth.auth.currentUser.uid)
+        .collection('following-artists')
+        .ref.get()
+        .then(function(querySnapshot) {
+          querySnapshot.forEach(function(doc) {
+          artistsFollowing[doc.data().id] = doc.id;
+          });
+        });
+      }
     });
-	this.followingArtists = artistsFollowing;
+  this.followingArtists = artistsFollowing;
   }
 
   parseArtistData() {
