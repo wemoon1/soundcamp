@@ -1,8 +1,16 @@
-<ng-container *ngIf="id">
-  <h1>{{id.displayName}}</h1>
-  <h3>address: {{id.street}}, {{id.city.displayName}}, {{id.city.state.displayName}}  {{id.zip}}</h3>
-  <h3>phone: {{id.phone}}</h3>
-  <h3>website: <a href={{id.website}}>{{id.website}}</a></h3>
-  <p>description: {{id.description}}</p>
-  <p>capacity: {{id.capacity}}</p>
-</ng-container>
+<div class="container">
+  <ng-container *ngIf="venue">
+    <h1>{{ venue.displayName }}</h1>
+    <h3>Address: {{ venue.street }}, {{ venue.city.displayName }}, {{ venue.city.country.displayName }}</h3>
+    <h3>Phone: {{ venue.phone }}</h3>
+    <h3>Website: <a href={{venue.website}}>{{venue.website}}</a></h3>
+    <h3>Description: {{venue.description}}</h3>
+    <h3>Capacity: {{ venue.capacity }}</h3>
+  </ng-container>
+  <ng-container *ngIf="upcomingEvents">
+    <app-event-list [events]="upcomingEvents"></app-event-list>
+  </ng-container>
+  <div *ngIf="totalUpcomingEvents > upcomingEventsShown">
+    <button class="btn btn-primary" (click)="showMoreUpcoming()" type="submit">show more</button>
+  </div>
+</div>
