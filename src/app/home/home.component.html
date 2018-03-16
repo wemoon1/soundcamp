@@ -1,15 +1,25 @@
 <div class="container">
   <app-search-form></app-search-form>
   <ng-container *ngIf="upcomingEvents.length > 0">
-    <h1>Your saved events:</h1>
+    <div class="text-purple my-2">
+        <h1>Your saved events:</h1>
+    </div>
     <div *ngFor="let event of upcomingEvents">
-      <h3>{{ event }}</h3>
+      <div class="border-purple my-2 text-white media">
+        <div class="media-body mx-3 my-3 align-self-center">
+            {{ event }}
+        </div>
+      </div>
     </div>
   </ng-container>
   <ng-container *ngIf="!loggedIn">
-    <h2>Events near you:</h2>
+      <div class="text-purple my-2">
+          <h1>Events near you:</h1>
+      </div>
     <ng-container *ngIf="loading">
-      <p>loading...</p>
+      <div class="text-purple my-2">
+          <h3>loading...</h3>
+      </div>
     </ng-container>
     <ng-container *ngIf="nearEvents">
       <app-event-list [events]="nearEvents"></app-event-list>
