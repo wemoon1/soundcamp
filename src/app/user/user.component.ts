@@ -35,7 +35,7 @@ export class UserComponent {
         userInfo = doc.data();
     }).then(() => {
       this.fetchUser(userInfo);
-    }
+    });
   }
 
   getFutureEvents(){
