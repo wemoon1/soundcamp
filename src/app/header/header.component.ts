@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AuthService } from '../core/auth.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-header',
@@ -8,13 +9,19 @@ import { AuthService } from '../core/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  user;
 
-  constructor(private af: AngularFireAuth, public auth: AuthService) { }
+  constructor(private afAuth: AngularFireAuth,
+              public auth: AuthService) { }
 
   ngOnInit() {
   }
 
   gLogin(){
       this.auth.googleLogin();
+  }
+
+  signOut() {
+      this.auth.signOut();
   }
 }

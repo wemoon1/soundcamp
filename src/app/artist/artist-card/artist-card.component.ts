@@ -5,6 +5,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { Observable } from 'rxjs/Observable'
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AuthService } from '../../core/auth.service';
+
 @Component({
   selector: 'app-artist-card',
   templateUrl: './artist-card.component.html',
@@ -53,6 +54,7 @@ export class ArtistCardComponent implements OnInit {
     if (this.user) {
       console.log("currently signed in user:")
       console.log(this.user)
+
       console.log(this.user.displayName)
       console.log(this)
         if (this.artist) {
@@ -78,4 +80,5 @@ export class ArtistCardComponent implements OnInit {
     .doc(String(this.followingArtists[this.artistId])).delete();
 	this.followingArtists.splice(this.artistId)
   }
+
 }

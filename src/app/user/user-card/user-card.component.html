@@ -1,0 +1,13 @@
+<ng-container *ngIf="userResults">
+  <div *ngFor="let user of userResults">
+  <div class="border-purple my-2 text-white media">
+  <img class="align-self-center mx-3 my-2 rounded-circle"src="https://via.placeholder.com/64x64">
+  <div class="media-body align-self-center">
+    <h3>{{user.title}}</h3>
+	</div>
+	<a routerLink="/user/{{user.id}}">
+	<button class="btn btn-primary">user profile</button>
+	</a>
+	</div>
+  </div>
+</ng-container>

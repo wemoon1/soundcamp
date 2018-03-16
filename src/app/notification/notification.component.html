@@ -1,0 +1,10 @@
+<div *ngIf="displayName.length > 0" class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    !
+  </button>
+  <div class="dropdown-menu">
+    <div *ngFor="let item of displayName">
+      <a class="dropdown-item" (click)="onSelected(item)">{{ item }}</a>
+    </div>
+  </div>
+</div>

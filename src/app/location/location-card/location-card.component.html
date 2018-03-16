@@ -1,28 +1,21 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title> Location card </title>
-    <meta charset="utf-8">
-  </head>
-  <body>
-    <section class="card">
+<div class="body1">
+    <!-- <section class="card">
       <div style="font-size:30px; width:80%;"> Location name {{location.metroArea.displayName}} </div>
       <div class="track_button">Track location</div>
-    </section>
+    </section> -->
 
     <div *ngIf="location">
       <div class="border-purple my-2 text-white media">
         <img class="align-self-center mx-3 my-2 rounded-circle"src="https://via.placeholder.com/64x64">
         <div class="media-body align-self-center">
+          <div (click)="onSelected()">
+          
 
-           <h4>  <a routerLink="/location/{{location.metroArea.id}}">{{location.city.country.displayName}}</a></h4>
-
+           <!-- <h4>  <a routerLink="/location/{{location.metroArea.id}}">{{location.metroArea.displayName}}/{{location.city.country.displayName}}</a></h4> -->
+   <h4> {{location.metroArea.displayName}}/{{location.city.country.displayName}}</h4>
            </div>
+             </div>
              <button class="btn btn-primary" (click)="onFollow()">Follow</button>
          </div>
         </div>
-
-
-
-  </body>
-</html>
+</div>

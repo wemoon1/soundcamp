@@ -32,6 +32,7 @@ import { RegisterComponent } from './register/register.component';
 import { LocationDetailComponent } from './location/location-detail/location-detail.component';
 import { LocationListComponent } from './location/location-list/location-list.component';
 import { LocationCardComponent } from './location/location-card/location-card.component';
+import { UserCardComponent } from './user/user-card/user-card.component';
 
 /* Services */
 import { SoundcampService } from './services/soundcamp.service';
@@ -40,6 +41,7 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { NotificationComponent } from './notification/notification.component';
 
 /* Routes (move to separate file?) */
 const routes: Routes = [
@@ -53,10 +55,9 @@ const routes: Routes = [
     ]
   },
   { path: 'event/:id', component: EventDetailComponent },
-  { path: 'venue-list', component:  VenueListComponent  },
-  { path: 'venue-detail/:id', component: VenueDetailComponent },
-  { path: 'user', component: UserComponent },
-  { path: 'user/:id', component: UserProfileComponent },
+  { path: 'venue/:id', component: VenueDetailComponent },
+  { path: 'user/:id', component: UserComponent },
+  { path: 'profile', component: UserProfileComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'location/:id', component: LocationDetailComponent }
 ];
@@ -85,7 +86,9 @@ const routes: Routes = [
     LocationDetailComponent,
     LocationListComponent,
     LocationCardComponent,
-    RegisterComponent
+    RegisterComponent,
+    NotificationComponent,
+    UserCardComponent
 
   ],
   imports: [
