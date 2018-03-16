@@ -21,6 +21,7 @@ export class LocationListComponent implements OnInit, OnChanges {
   constructor(private service: SoundcampService, private dataservice: DataService) { }
 
   ngOnInit() {
+
   }
 
   ngOnChanges() {
