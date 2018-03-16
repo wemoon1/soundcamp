@@ -30,16 +30,18 @@ export class ArtistDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.artist = this.data.loadArtist();
-    if (this.artist) {
-      if (this.artist.onTourUntil) {
-        this.onTour = true;
-        this.getUpcomingEvents();
+    this.route.params.subscribe(params => {
+      this.artist = this.data.loadArtist();
+      if (this.artist) {
+        if (this.artist.onTourUntil) {
+          this.onTour = true;
+          this.getUpcomingEvents();
+        }
+        this.getPastEvents();
+      } else {
+        this.router.navigate(['']);
       }
-      this.getPastEvents();
-    } else {
-      this.router.navigate(['']);
-    }
+    });
   }
 
   getUpcomingEvents() {
