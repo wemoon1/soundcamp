@@ -1,7 +1,6 @@
 <ng-container *ngIf="locationResults[0]">
   <h3 style="color: #7E57C2; font-size: 35px;">Locations</h3>
   <div *ngFor="let location of locationResults">
-
     <app-location-card [location]="location"></app-location-card>
   </div>
   <div *ngIf="totalResults > resultsShown">
