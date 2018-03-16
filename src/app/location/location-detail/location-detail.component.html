@@ -7,13 +7,12 @@
   <body>
     <div class="container">
     <section class="detail">
-      <p><strong style="font-size:50px;"> LOCATION {{location}} </strong></p>
-      <p><strong style="font-size:30px;">List of upcoming</strong></p>
+      <p><strong style="font-size:50px;">{{location.city.displayName}}, {{location.city.country.displayName}} </strong></p>
+      <p><strong style="font-size:30px;">Upcoming events:</strong></p>
       <div *ngIf="searchEvent">
         <app-event-list [events]="searchEvent">
         </app-event-list>
      </div>
-      <p><strong style="font-size:30px;">List of previous</strong></p>
     </section>
     </div>
   </body>
