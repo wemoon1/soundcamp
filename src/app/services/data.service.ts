@@ -14,7 +14,7 @@ export class DataService {
   event: any;
   venue: any;
   artist: any;
-
+  location: any;
   private msgSource = new Subject<any>();
   currentMsg = this.msgSource.asObservable();
 
@@ -25,6 +25,12 @@ export class DataService {
 
   loadArtist(): any {
     return this.artist;
+  }
+  saveLocation(location: any) {
+    this.location = location;
+  }
+  loadLocation(location: any) {
+    return this.location;
   }
 
   saveEvent(response: any) {

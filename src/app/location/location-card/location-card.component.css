@@ -1,10 +1,10 @@
 .card {
-  background-color: black;
+  background-color: #7E57C2;
   color: white;
   padding: 10px;
   border: 3px solid;
   border-radius: 15px;
-  border-color: #FF1493;
+  border-color: #353a3f;
   height: auto;
   min-height: 70px;
   margin-left: 15%;
@@ -18,9 +18,12 @@
   right: 5%;
   font-size: 20px;
   padding: 8px;
-  background-color: #FF1493;
+  background-color: #353a3f;
   color: white;
   border-radius: 10px;
   text-align: center;
   width: auto;
+}
+.body1{
+background-color: #353a3f;
 }
