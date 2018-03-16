@@ -17,7 +17,6 @@ export class NotificationComponent implements OnInit {
   ngOnInit() {
     this.data.currentMsg.subscribe(newMsg => {
       this.displayName = newMsg;
-      // this.insertNames(newMsg);
     });
   }
 
