@@ -10,7 +10,6 @@ import { AngularFirestore } from 'angularfire2/firestore';
   styleUrls: ['./notification.component.css']
 })
 export class NotificationComponent implements OnInit {
-  notificationItems;
   displayName = [];
   constructor(private data: DataService, private router: Router, private afAuth: AngularFireAuth,
     private afs: AngularFirestore) { }
@@ -18,7 +17,6 @@ export class NotificationComponent implements OnInit {
   ngOnInit() {
     this.data.currentMsg.subscribe(newMsg => {
       this.displayName = newMsg;
-      this.notificationItems = newMsg;
       // this.insertNames(newMsg);
     });
   }
