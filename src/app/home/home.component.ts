@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   clientHasGeolocationEnabled = true;
   geolocationPosition: Position;
   loading = true;
-  events: any;
+  nearEvents: any;
   loggedIn = false;
   // artistsOnTour = [];
   upcomingEvents = [];
@@ -26,25 +26,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.notifyEvents();
     this.getMyEvents();
-    // if (window.navigator.geolocation) {
-    //   window.navigator.geolocation.getCurrentPosition(
-    //     (position) => {
-    //       this.loading = false; // the geo location has been loaded, set it to false
-    //       this.clientHasGeolocationEnabled = true; // client has enabled geolocation
-    //       this.geolocationPosition = position;
-    //       const backupPosition = {
-    //         coords : {
-    //           'latitude': 51.5074,
-    //           'longitude': 0.1278
-    //         }
-    //       };
-    //       this.soundcamp.getNearestEvents(backupPosition, 1).subscribe( (data: any) => {
-    //         console.log('grabbing data...');
-    //         this.events = data.resultsPage.results.event;
-    //       });
-    //     }
-    //   );
-    // }
+    this.findEventsNearMe();
   }
 
   notifyEvents() {
@@ -63,7 +45,7 @@ export class HomeComponent implements OnInit {
           this.findArtistsOnTour(followingArtists);
         });
       } else {
-        console.log('user not logged in');
+        this.loggedIn = false;
       }
     });
   }
@@ -98,6 +80,32 @@ export class HomeComponent implements OnInit {
           console.log(this.upcomingEvents);
         });
       }
+    });
+  }
+
+  findEventsNearMe() {
+    this.afAuth.auth.onAuthStateChanged((user) => {
+      if (!user) {
+        if (window.navigator.geolocation) {
+        window.navigator.geolocation.getCurrentPosition(
+          (position) => {
+            this.loading = false; // the geo location has been loaded, set it to false
+            this.clientHasGeolocationEnabled = true; // client has enabled geolocation
+            this.geolocationPosition = position;
+            const backupPosition = {
+              coords : {
+                'latitude': 51.5074,
+                'longitude': 0.1278
+              }
+            };
+            this.soundcamp.getNearestEvents(backupPosition, 1).subscribe( (data: any) => {
+              this.nearEvents = data.resultsPage.results.event;
+              console.log(this.nearEvents);
+            });
+          }
+        );
+      }
+    }
     });
   }
 }
