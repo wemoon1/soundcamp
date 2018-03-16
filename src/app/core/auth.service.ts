@@ -21,6 +21,7 @@ interface User {
 export class AuthService {
 
   user: Observable<User>;
+  collections=[];
 
   constructor(private afAuth: AngularFireAuth,
               private afs: AngularFirestore,

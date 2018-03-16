@@ -7,12 +7,22 @@
 <ng-template #guest>
     <h3>Howdy, GUEST</h3>
     <p>Login to get started...</p>
-
-    <button (click)="Auth.googleLogin()">
-        <i class="fa fa-google"></i> Connect Google
-    </button>
 </ng-template>
 
+<div *ngIf="collections">
+  <h1>Future Events</h1>
+  <div *ngFor="let event of collections">
+
+    <p> {{ event.name }}</p>
+  </div>
+</div>
+
+<div *ngIf="artistsFollowings">
+  <h1>Artists Following</h1>
+  <div *ngFor="let artist of artistsFollowings">
+    <a routerLink="/artist/{{artist[1]}}"><p> {{ artist[0] }}</p></a>
+  </div>
+</div>
 <!-- User logged in -->
 <div class="container">
       <div class="row">
@@ -20,6 +30,11 @@
 <ng-template #authenticated>
     <div *ngIf="Auth.user | async as user">
       <div class="col-xs-4">
+      <div *ngIf="Auth.user.photoURL">
+        <div *ngIf="Auth.user.photoURL">
+          <img  [src]="user.photoURL class="img-thumbnail"">
+        </div>
+      </div>
       <img  [src]="user.photoURL" class="img-thumbnail">
     </div>
         <div id="userinfo"class="col-xs-6">
