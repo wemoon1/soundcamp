@@ -1,19 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title> Location </title>
-    <meta charset="utf-8">
-  </head>
-  <body>
-    <div class="container">
-    <section class="detail">
-      <p><strong style="font-size:50px;">{{location.city.displayName}}, {{location.city.country.displayName}} </strong></p>
-      <p><strong style="font-size:30px;">Upcoming events:</strong></p>
-      <div *ngIf="searchEvent">
-        <app-event-list [events]="searchEvent">
-        </app-event-list>
-     </div>
-    </section>
-    </div>
-  </body>
-</html>
+<div class="container">
+  <h1 class="text-white">{{location.city.displayName}}, {{location.city.country.displayName}}</h1>
+  <h2 class="text-white">Upcoming events:</h2>
+  <div *ngIf="searchEvent">
+    <app-event-list [events]="searchEvent">
+    </app-event-list>
+  </div>
+</div>
+

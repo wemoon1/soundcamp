@@ -1,9 +1,9 @@
 <div class="container">
   <ng-container *ngIf="artist">
-    <h1>{{artist.displayName}}</h1>
+    <h1 class="text-white">{{artist.displayName}}</h1>
     <ng-container *ngIf="onTour">
-      <h2>Upcoming events</h2>
-      <ng-container *ngIf="upcomingEvents">
+      <h2 class="text-white">Upcoming events</h2>
+      <ng-container *ngIf="upcomingEvents text-white">
         <app-event-list [events]="upcomingEvents"></app-event-list>
       </ng-container>
       <div *ngIf="totalUpcomingEvents > upcomingEventsShown">
@@ -11,11 +11,11 @@
       </div>
     </ng-container>
     <ng-container *ngIf="!onTour">
-      <h2>Artist is not on tour!</h2>
+      <h2 class="text-white">Artist is not on tour!</h2>
     </ng-container>
   </ng-container>
 
-  <h2>Past events</h2>
+  <h2 class="text-white my-3">Past events</h2>
   <ng-container *ngIf="pastEvents">
     <app-event-list [events]="pastEvents"></app-event-list>
   </ng-container>
