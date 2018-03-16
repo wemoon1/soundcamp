@@ -29,7 +29,7 @@ export class UserComponent {
 
   getUser(){
     console.log(this.id)
-    const userInfo;
+    var userInfo;
     var user = this.afs.collection('users').doc(this.id)
     user.ref.get().then(function(doc) {
         userInfo = doc.data();
