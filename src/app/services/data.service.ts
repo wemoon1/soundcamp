@@ -29,7 +29,7 @@ export class DataService {
   saveLocation(location: any) {
     this.location = location;
   }
-  loadLocation(location: any) {
+  loadLocation() {
     return this.location;
   }
 
