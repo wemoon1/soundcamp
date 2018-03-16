@@ -1,0 +1,42 @@
+.venuename{
+  text-align: justify;
+  line-height: 1.2;
+  font-size: 20px;
+  color:white;
+  text-align: center
+
+
+}
+h2{
+margin-left: 440px;
+color: white;
+
+}
+
+
+.lineup-list {
+  font-size: 20px;
+  color:white;
+  text-align: justify;
+    word-spacing: 3px;
+    line-height: 1.2;
+}
+.container{
+ margin: center;
+ width: 100%;
+
+ overflow: hidden;
+}
+.time{
+  text-align: justify;
+  line-height: 1.2;
+  font-size: 20px;
+  color:white;
+  text-align: center;
+  margin-bottom: 10px;
+}
+#button{
+  width: 100%;
+  margin-top:20px;
+    float: left;
+}
