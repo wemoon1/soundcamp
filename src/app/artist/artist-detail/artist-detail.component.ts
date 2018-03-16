@@ -15,6 +15,10 @@ export class ArtistDetailComponent implements OnInit {
   currentPageUpcoming = 1;
   upcomingEventsShown = 0;
 
+  pastEvents = [];
+  totalPastEvents = 0;
+  currentPagePast = 1;
+  pastEventsShown = 0;
   perPage = 5;
 
   onTour = false;
@@ -26,15 +30,18 @@ export class ArtistDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.artist = this.data.loadArtist();
-    if (this.artist) {
-      if (this.artist.onTourUntil) {
-        this.onTour = true;
-        this.getUpcomingEvents();
+    this.route.params.subscribe(params => {
+      this.artist = this.data.loadArtist();
+      if (this.artist) {
+        if (this.artist.onTourUntil) {
+          this.onTour = true;
+          this.getUpcomingEvents();
+        }
+        this.getPastEvents();
+      } else {
+        this.router.navigate(['']);
       }
-    } else {
-      this.router.navigate(['']);
-    }
+    });
   }
 
   getUpcomingEvents() {
@@ -60,11 +67,41 @@ export class ArtistDetailComponent implements OnInit {
     this.getUpcomingEvents();
   }
 
+  //////
+  getPastEvents() {
+    this.soundcamp.getArtistPastEvents(this.artist.id, this.currentPagePast).subscribe(data => {
+      this.updatePastEvents(data);
+    });
+  }
+
+  updatePastEvents(events: any) {
+    if (this.currentPagePast < 2) {
+      this.totalPastEvents = events.resultsPage.totalEntries;
+    }
+    this.pastEventsShown = this.currentPagePast * this.perPage;
+    if (this.totalPastEvents) {
+      for (const event of events.resultsPage.results.event) {
+        this.pastEvents.push(event);
+      }
+    }
+  }
+
+  showMorePast() {
+    this.currentPagePast += 1;
+    this.getPastEvents();
+  }
+
+
   clearResults() {
     this.upcomingEvents = [];
     this.totalUpcomingEvents = 0;
     this.currentPageUpcoming = 1;
     this.upcomingEventsShown = 0;
+
+    this.pastEvents = [];
+    this.totalPastEvents = 0;
+    this.currentPagePast = 1;
+    this.pastEventsShown = 0;
   }
 
 }
