@@ -25,20 +25,25 @@
         </div>
       </div>
     </div>
-        <div id="userinfo"class="col-xs-6">
-      <p>username: {{ user.displayName }}  </p>
+      <div id="userinfo" class="col-xs-6">
+        <h2 class="text-white">User info:</h2>
+        <p>username: {{ user.displayName }}  </p>
 
-      <p>Email: {{ user.email }} </p>
+        <p>Email: {{ user.email }} </p>
     </div>
 </div>
 
   <div id="events" class="container">
-    <p id="title">Upcoming-events</p>
+      <div class="text-purple my-2">
+          <h1>Events near you:</h1>
+      </div>
     <div *ngIf="collections then events"> </div>
   </div>
 
     <div id="events" class="container">
-      <p id="title">Following Artists</p>
+        <div class="text-purple my-2 mt-3">
+            <h1>Following Artists:</h1>
+        </div>
     <div *ngIf="artistsFollowings then artists"> </div>
   </div>
 
@@ -49,18 +54,21 @@
   </div>
 <ng-template #events>
         <div *ngFor="let event of collections">
-            <div class="col-xs-8">
-                    <p id="event"> {{ event.name }}</p>
-                        </div>
-                  </div>
-
-
+            <div class="border-purple my-2 text-white media">
+                <div class="media-body mx-3 my-3 align-self-center">
+                    {{ event.name }}
+                </div>
+              </div>
+        </div>
 </ng-template>
 <ng-template #artists>
   <div class="artist">
       <div *ngFor="let artist of artistsFollowings">
-        <!-- <a routerLink="/artist/{{artist[1]}}"><p> {{ artist[0] }}</p></a> -->
-        <div (click)="onSelected(artist[1], artist[0])"><p> {{ artist[0] }}</p></div>
+          <div class="border-purple my-2 text-white media">
+              <div class="media-body mx-3 my-3 align-self-center">
+                  <div (click)="onSelected(artist[1], artist[0])">{{ artist[0] }}</div>
+              </div>
+            </div>
       </div>
   </div>
 </ng-template>

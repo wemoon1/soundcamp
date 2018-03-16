@@ -1,14 +1,13 @@
-<form [formGroup]="registerForm" (ngSubmit)="login(user)">
-
-  <label for="email" >Email</label>
-	<input type="text" formControlName="email" class="form-control" name="email" id="email"  placeholder="Enter your Email" required/>
-  <br>
-  <label for="password" >Password</label>
-	<input type="password" formControlName="password" class="form-control" name="password" id="password"  placeholder="Enter your Password" required/>
-
-	<div class="form-group ">
-		<button type="submit" class="submitbtn">Log in</button>
+<form [formGroup]="registerForm" (ngSubmit)="login(user)">			
+	<div class="form-group">
+			<label for="email" >Email</label>
+			<input type="email" formControlName="email" class="form-control" name="email" id="email"  placeholder="Enter your Email" required/>		
 	</div>
+	<div class="form-group">
+		<label for="password" >Password</label>
+		<input type="password" formControlName="password" class="form-control" name="password" id="password"  placeholder="Enter your Password" required/>		
+	</div>
+	<button type="submit" class="submitbtn">Log in</button>
   <p> If you forgot password, please type email and hit Forgot Password. </p>
 </form>
 
