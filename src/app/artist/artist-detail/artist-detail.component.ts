@@ -31,6 +31,7 @@ export class ArtistDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
+      this.clearResults();
       this.artist = this.data.loadArtist();
       if (this.artist) {
         if (this.artist.onTourUntil) {
