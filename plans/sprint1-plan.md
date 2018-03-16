@@ -70,5 +70,9 @@ Yang: Developer
 ## Initial scrum board
 See the github [project](https://github.com/wemoon1/soundcamp/projects/1?) page.
 
+## Burn up chart
+
+[Link to the burn up chart](https://docs.google.com/a/ucsc.edu/spreadsheets/d/1BbZ8ndXCgSjON6_fsBFhCn7kF9Nb4B7S5VAnLSBvdJg/edit?usp=sharing)
+
 ## Scrum times
 Meet at the Sandwich Spot every Monday 4pm.
