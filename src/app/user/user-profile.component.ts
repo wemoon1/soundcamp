@@ -21,15 +21,15 @@ auth;
   constructor(private route: ActivatedRoute,
               private afs: AngularFirestore,
               private afsauth: AngularFireAuth,
-              public Auth: AuthService
+              public Auth: AuthService,
+              private data: DataService
                ) { }
 
   ngOnInit() {
      this.Auth.user.subscribe(data => this.getFutureEvents(data));
      this.Auth.user.subscribe(data => this.getFollowingArtists(data));
-     // const artistsFollowing = this.getFollowingArtists(data);
   }
-  //this.user = this.afsauth.auth.currentUser
+
   getFutureEvents(data:any){
     const collection: AngularFirestoreCollection<any> = this.afs.collection('users').doc(data.uid).collection('future-events').valueChanges();
     collection.subscribe(data => this.collections=data) );
@@ -38,7 +38,8 @@ auth;
     const artistsFollowing = [];
     this.afs.collection('users').doc(data.uid).collection('following-artists').ref.get().then(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
-        artistsFollowing.push(doc.id);
+        artistsFollowing.push([doc.id,doc.data().id]);
+        console.log(artistsFollowing)
       });
     });
     this.artistsFollowings = artistsFollowing;

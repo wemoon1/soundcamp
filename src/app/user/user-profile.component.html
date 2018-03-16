@@ -20,7 +20,7 @@
 <div *ngIf="artistsFollowings">
   <h1>Artists Following</h1>
   <div *ngFor="let artist of artistsFollowings">
-    <p> {{ artist }}</p>
+    <a routerLink="/artist/{{artist[1]}}"><p> {{ artist[0] }}</p></a>
   </div>
 </div>
 <!-- User logged in -->
