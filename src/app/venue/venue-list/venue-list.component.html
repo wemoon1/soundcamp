@@ -1,4 +1,4 @@
-<ng-container *ngIf="venueResult">
+<ng-container *ngIf="venueResult[0]">
   <h3 style="color: #7E57C2;">Venues</h3>
   <div *ngFor="let venue of venueResult" class="results">
     <app-venue-card [venue]="venue"></app-venue-card>
