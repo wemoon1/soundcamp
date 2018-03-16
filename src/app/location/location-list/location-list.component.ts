@@ -25,6 +25,7 @@ export class LocationListComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
+    this.clearResults();
     this.searchLocation();
   }
   searchLocation() {
