@@ -10,19 +10,36 @@
       <a class="nav-item nav-link" routerLink="/about">about</a>
     </div>
     <div class="navbar-nav ml-auto">
-      <div ngbDropdown class="d-inline-block">
-        <button class="btn btn-outline-primary" id="logindrop" ngbDropdownToggle>Log in</button>
-        <div ngbDropdownMenu aria-labelledby="logindrop">
-          <a routerLink="/login">
-            <button class="dropdown-item">Soundcamp</button>
-          </a>
-          <button class="dropdown-item" (click)="gLogin()">Google</button>
-        </div>
+
+      <div *ngIf="auth.user | async; then authenticated else guest">
+
       </div>
-      <a routerLink="/register">
-        <button class="nav-item nav-link btn btn-outline-primary" type="submit">Register</button>
-      </a>
-      <app-notification></app-notification>
     </div>
   </div>
 </nav>
+
+<ng-template #authenticated>
+  <div *ngIf="auth.user | async as user">
+    <a routerLink="/profile">
+      <button class="nav-item nav-link btn btn-outline-primary">
+        {{user.displayName}} Profile
+      </button>
+    </a>
+  </div>
+  <button class="nav-item nav-link btn btn-outline-primary" (click)="signOut()">Sign out</button>
+</ng-template>
+
+<ng-template #guest>
+  <div ngbDropdown class="d-inline-block">
+    <button class="btn btn-outline-primary" id="logindrop" ngbDropdownToggle>Log in</button>
+    <div ngbDropdownMenu aria-labelledby="logindrop">
+      <a routerLink="/login">
+        <button class="dropdown-item">Soundcamp</button>
+      </a>
+      <button class="dropdown-item" (click)="gLogin()">Google</button>
+    </div>
+  </div>
+    <a routerLink="/register">
+    <button class="nav-item nav-link btn btn-outline-primary" type="submit">Register</button>
+  </a>
+</ng-template>

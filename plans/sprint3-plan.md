@@ -69,10 +69,6 @@ Yang: Developer, Scrum master
 
 **User story 1.** Complete ```location-list```, ```location-card```, and ```location-details```.
 
-## Initial burn up chart
-
-[Link to the burn up chart](https://drive.google.com/open?id=1ua310rGsGIqH09MfcrmPfZvHzYbLW7tEDKGWAuVuPwI)
-
 ## Initial scrum board
 See the github [project](https://github.com/wemoon1/soundcamp/projects/3?) page.
 

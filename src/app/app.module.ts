@@ -56,8 +56,8 @@ const routes: Routes = [
   { path: 'event/:id', component: EventDetailComponent },
   { path: 'venue-list', component:  VenueListComponent  },
   { path: 'venue-detail/:id', component: VenueDetailComponent },
-  { path: 'user', component: UserComponent },
-  { path: 'user/:id', component: UserProfileComponent },
+  { path: 'user/:id', component: UserComponent },
+  { path: 'profile', component: UserProfileComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'location/:id', component: LocationDetailComponent }
 ];
