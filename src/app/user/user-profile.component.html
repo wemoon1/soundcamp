@@ -24,11 +24,37 @@
   </div>
 </div>
 <!-- User logged in -->
+<div class="container">
+      <div class="row">
+    <div class="col-xs-6">
 <ng-template #authenticated>
     <div *ngIf="Auth.user | async as user">
+      <div class="col-xs-4">
+      <div *ngIf="Auth.user.photoURL">
         <div *ngIf="Auth.user.photoURL">
-          <img  [src]="user.photoURL">
+          <img  [src]="user.photoURL class="img-thumbnail"">
         </div>
-        <h1>{{ user.displayName }}</h1>
+      </div>
+      <img  [src]="user.photoURL" class="img-thumbnail">
     </div>
+        <div id="userinfo"class="col-xs-6">
+      <p>username: {{ user.displayName }}  </p>
+
+      <p>Email: {{ user.email }} </p>
+    </div>
+        <button  id="Logout" type="button" class="btn btn-danger" (click)="auth.signOut()">Logout</button>
+</div>
 </ng-template>
+    </div>
+    </div>
+  </div>
+<div id="events" class="container">
+  <p id="title">Upcoming-events</p>
+  <div *ngIf="collections">
+      <div *ngFor="let event of collections">
+          <div class="col-xs-8">
+                  <p id="event"> {{ event.name }}</p>
+                      </div>
+                </div>
+      </div>
+</div>

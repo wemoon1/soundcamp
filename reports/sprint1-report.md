@@ -31,3 +31,7 @@ The team should keep following gitflow workflow because it helps us keep our cod
 **User stories/day:** 1
 
 **Ideal work hours/day**: 2
+
+## Burn up chart
+
+[Link to the burn up chart](https://docs.google.com/a/ucsc.edu/spreadsheets/d/1BbZ8ndXCgSjON6_fsBFhCn7kF9Nb4B7S5VAnLSBvdJg/edit?usp=sharing)

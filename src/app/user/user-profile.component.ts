@@ -44,4 +44,3 @@ auth;
     });
     this.artistsFollowings = artistsFollowing;
   }
-}
