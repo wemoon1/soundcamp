@@ -16,7 +16,7 @@ export class UserProfileComponent implements OnInit {
 
 id = '';
 collections=[];
-artistsFollowing=[];
+artistsFollowings=[];
 auth;
   constructor(private route: ActivatedRoute,
               private afs: AngularFirestore,
@@ -31,8 +31,8 @@ auth;
   }
 
   getFutureEvents(data:any){
-    const collection: AngularFirestoreCollection<any> = this.afs.collection('users').doc(data.uid).collection('future-events').valueChanges();
-    collection.subscribe(data => this.collections=data) );
+    const collection: AngularFirestoreCollection<any> = this.afs.collection('users').doc(data.uid).collection('future-events')
+    collection.valueChanges().subscribe(data => this.collections=data);
   }
   getFollowingArtists(data){
     const artistsFollowing = [];
@@ -44,3 +44,4 @@ auth;
     });
     this.artistsFollowings = artistsFollowing;
   }
+}
