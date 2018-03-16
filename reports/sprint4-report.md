@@ -26,7 +26,7 @@ Keep using github projects as a scrum board since it's easier to have everything
 
 **User stories completed:** 2
 
-**Estimated ideal work hours completed:** 29
+**Estimated ideal work hours completed:** 12
 
 **Number of days works done**: 14
 
