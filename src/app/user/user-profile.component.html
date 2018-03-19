@@ -21,7 +21,7 @@
       <div class="col-xs-4">
       <div *ngIf="Auth.user.photoURL">
         <div *ngIf="Auth.user.photoURL">
-          <img  [src]="user.photoURL" class="img-thumbnail">
+          <img [src]="user.photoURL" class="img-thumbnail">
         </div>
       </div>
     </div>
@@ -35,7 +35,7 @@
 
   <div id="events" class="container">
       <div class="text-purple my-2">
-          <h1>Events near you:</h1>
+          <h1>My saved events:</h1>
       </div>
     <div *ngIf="collections then events"> </div>
   </div>
