@@ -42,6 +42,7 @@ As a developer I want to…
 As a user I want to…
 * (15 pts) Add concerts I previously visited to my list so that I keep track and share the list with other users
 * (6 pts) Search other users so that I can view their following artists and their previously attended events
+* (3 pts) see any events near me if I am not logged in so that I can quickly view live music shows near me.
 
 As a developer I want to…
 * (11 pts) Make sure all tests pass so that I can ensure the product will work
@@ -50,5 +51,4 @@ As a developer I want to…
 ## Product Backlog
 * Purchase tickets functionality
 * Share via social media user going to an event
-* Show events near me
 * Send messages to other users
