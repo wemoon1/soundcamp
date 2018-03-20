@@ -1,4 +1,5 @@
 # Soundcamp
+Track concerts by starring your favorite artists, venues, or cities! Soundcamp will automatically send you a notification if a new concert date is released! 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 
